@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>入门webpack | whh-blogs-record</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Webpack的强大功能 使用webpack构建本地服务器1、安装依赖项1npm install --save-dev webpack-dev-server 2、配置项123456781）contentBase: 	默认webpack-dev-server会为根文件夹提供本地服务器，如果想为另外一个目录下的文件提供本地服务器，应该在这里设置其所在目录2）port: 	设置默认监听端口，如果省略，默">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="入门webpack">
+<meta property="og:url" content="http://yoursite.com/2018/03/08/入门webpack/index.html">
+<meta property="og:site_name" content="whh-blogs-record">
+<meta property="og:description" content="Webpack的强大功能 使用webpack构建本地服务器1、安装依赖项1npm install --save-dev webpack-dev-server 2、配置项123456781）contentBase: 	默认webpack-dev-server会为根文件夹提供本地服务器，如果想为另外一个目录下的文件提供本地服务器，应该在这里设置其所在目录2）port: 	设置默认监听端口，如果省略，默">
+<meta property="og:updated_time" content="2018-03-24T05:24:23.818Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="入门webpack">
+<meta name="twitter:description" content="Webpack的强大功能 使用webpack构建本地服务器1、安装依赖项1npm install --save-dev webpack-dev-server 2、配置项123456781）contentBase: 	默认webpack-dev-server会为根文件夹提供本地服务器，如果想为另外一个目录下的文件提供本地服务器，应该在这里设置其所在目录2）port: 	设置默认监听端口，如果省略，默">
+  
+    <link rel="alternative" href="/atom.xml" title="whh-blogs-record" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">whh</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/autoTool/" style="font-size: 20px;">autoTool</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-antd-program/" style="font-size: 10px;">react - antd - program</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">whh</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">whh</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-入门webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/08/入门webpack/" class="article-date">
+  	<time datetime="2018-03-08T01:17:07.000Z" itemprop="datePublished">2018-03-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      入门webpack
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Webpack的强大功能</p>
+<h2 id="使用webpack构建本地服务器"><a href="#使用webpack构建本地服务器" class="headerlink" title="使用webpack构建本地服务器"></a>使用webpack构建本地服务器</h2><p>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev webpack-dev-server</span><br></pre></td></tr></table></figure></p>
+<p>2、配置项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1）contentBase: </span><br><span class="line">	默认webpack-dev-server会为根文件夹提供本地服务器，如果想为另外一个目录下的文件提供本地服务器，应该在这里设置其所在目录</span><br><span class="line">2）port: </span><br><span class="line">	设置默认监听端口，如果省略，默认为”8080“</span><br><span class="line">3）iniline: </span><br><span class="line">	设置为<span class="literal">true</span>，当源文件改变时会自动刷新页面</span><br><span class="line">4）historyApiFallback: </span><br><span class="line">	在开发单页应用时非常有用，它依赖于HTML5 <span class="built_in">history</span> API，如果设置为<span class="literal">true</span>，所有的跳转将指向index.html</span><br></pre></td></tr></table></figure></p>
+<p>3、在package.json中的scripts对象中添加如下命令，用以开启本地服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>,</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"webpack"</span>,</span><br><span class="line">    <span class="string">"server"</span>: <span class="string">"webpack-dev-server --open"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<h2 id="加载器（Loader作用于文件）"><a href="#加载器（Loader作用于文件）" class="headerlink" title="加载器（Loader作用于文件）"></a>加载器（Loader作用于文件）</h2><p>通过使用不同的loader，webpack有能力调用外部的脚本或工具，实现对不同格式的文件的处理<br>1、配置项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1）<span class="built_in">test</span>：一个用以匹配loaders所处理文件的拓展名的正则表达式（必须）</span><br><span class="line">2）loader：loader的名称（必须）</span><br><span class="line">3）include/exclude:手动添加必须处理的文件（文件夹）或屏蔽不需要处理的文件（文件夹）（可选）；</span><br><span class="line">4）query：为loaders提供额外的设置选项（可选</span><br></pre></td></tr></table></figure></p>
+<h3 id="Bable"><a href="#Bable" class="headerlink" title="Bable"></a>Bable</h3><p>Babel其实是一个编译JavaScript的平台,使项目能使用最新的JavaScript代码（ES6，ES7…）和基于JavaScript进行了拓展的语言<br>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react</span><br></pre></td></tr></table></figure></p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>css-loader使你能够使用类似@import 和 url(…)的方法实现 require()的功能;<br>style-loader将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中<br>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev style-loader css-loader</span><br></pre></td></tr></table></figure></p>
+<h4 id="Moudle-css"><a href="#Moudle-css" class="headerlink" title="Moudle css"></a>Moudle css</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">所有的类名，动画名默认都只作用于当前模块,这样做有效避免了全局污染(相同的类名也不会造成不同组件之间的污染)</span><br></pre></td></tr></table></figure>
+<h4 id="css预加载"><a href="#css预加载" class="headerlink" title="css预加载"></a>css预加载</h4><p>Sass 和 Less 之类的预处理器是对原生CSS的拓展，它们允许你使用类似于variables, nesting, mixins, inheritance等<br>不存在于CSS中的特性来写CSS，CSS预处理器可以这些特殊类型的语句转化为浏览器可识别的CSS语句<br>PostCSS是一种CSS的处理平台来，能为CSS代码自动添加适应不同浏览器的CSS前缀</p>
+<p>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev postcss-loader autoprefixer</span><br></pre></td></tr></table></figure></p>
+<p>接下来，在webpack配置文件中添加postcss-loader，在根目录新建postcss.config.js,并添加如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// postcss.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    plugins: [</span><br><span class="line">        require(<span class="string">'autoprefixer'</span>)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、常用预加载器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1）Less Loader</span><br><span class="line">2）Sass Loader</span><br><span class="line">3）Stylus Loader</span><br></pre></td></tr></table></figure></p>
+<h2 id="插件Plugs"><a href="#插件Plugs" class="headerlink" title="插件Plugs"></a>插件Plugs</h2><p>插件（Plugins 作用于项目）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务</p>
+<h3 id="HtmlWebpackPlugin"><a href="#HtmlWebpackPlugin" class="headerlink" title="HtmlWebpackPlugin"></a>HtmlWebpackPlugin</h3><p>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev html-webpack-plugin</span><br></pre></td></tr></table></figure></p>
+<p>2、这个插件自动完成了我们之前手动做的一些事情，在正式使用之前需要对一直以来的项目结构做一些更改<br>    1）移除public文件夹，利用此插件，index.html文件会自动生成，此外CSS已经通过前面的操作打包到JS中了;<br>    2）在app目录下，创建一个index.tmpl.html文件模板，这个模板包含title等必须元素，<br>    3）在编译过程中，插件会依据此模板生成最终的html页面，会自动添加所依赖的 css, js，favicon等文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Webpack Sample Project&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">'root'</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Hot-Module-Replacement"><a href="#Hot-Module-Replacement" class="headerlink" title="Hot Module Replacement"></a>Hot Module Replacement</h3><p>它允许你在修改组件代码后，自动刷新实时预览修改后的效果<br>1、配置项：在webpack配置文件中添加HMR插件;在Webpack Dev Server中添加“hot”参数<br>2、HMR是一个webpack插件，它让你能浏览器中实时观察模块修改后的效果，但是如果你想让它工作，需要对模块进行额外的配额<br>3、Bable中的react-transform-hrm插件可以在不对React模块进行额外的配置的前提下让HMR正常工作:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-plugin-react-transform react-transform-hmr</span><br></pre></td></tr></table></figure></p>
+<h3 id="babelrc配置"><a href="#babelrc配置" class="headerlink" title=".babelrc配置"></a>.babelrc配置</h3><p>Babel其实可以完全在 webpack.config.js 中进行配置，但是考虑到babel具有非常多的配置选项，在单一的webpack.config.js文件中进行配置往往使得这个文件显得太复杂，因此一些开发者支持把babel的配置选项放在一个单独的名为 “.babelrc” 的配置文件中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//.babelrc</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"presets"</span>: [<span class="string">"react"</span>, <span class="string">"env"</span>],</span><br><span class="line">	<span class="string">"env"</span>: &#123;</span><br><span class="line">	  elopment<span class="string">": &#123;</span></span><br><span class="line"><span class="string">		 "</span>plugins<span class="string">": [["</span>react-transform<span class="string">", &#123;</span></span><br><span class="line"><span class="string">			"</span>transforms<span class="string">": [&#123;</span></span><br><span class="line"><span class="string">			   "</span>transform<span class="string">": "</span>react-transform-hmr<span class="string">",         </span></span><br><span class="line"><span class="string">				"</span>imports<span class="string">": ["</span>react<span class="string">"],         </span></span><br><span class="line"><span class="string">				"</span>locals<span class="string">": ["</span>module<span class="string">"]</span></span><br><span class="line"><span class="string">			&#125;]</span></span><br><span class="line"><span class="string">		  &#125;]]</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">const webpack = require(<span class="string">'webpack'</span>);</span><br><span class="line">const HtmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    entry: __dirname + &#123;entry file&#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: __dirname + &#123;destination folder&#125;,</span><br><span class="line">        filename: &#123;fileName&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    devtool: <span class="string">'eval-source-map'</span>,</span><br><span class="line">	//便于编译后的调试</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: <span class="string">"./public"</span>, //本地服务器所加载的页面所在的目录</span><br><span class="line">        historyApiFallback: <span class="literal">true</span>, //不跳转</span><br><span class="line">        inline: <span class="literal">true</span> //实时刷新</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">test</span>: /(\.css|\.)$/,</span><br><span class="line">				user:&#123;</span><br><span class="line">					&#123;</span><br><span class="line">                        loader: <span class="string">"style-loader"</span></span><br><span class="line">                    &#125;, &#123;</span><br><span class="line">                        loader: <span class="string">"css-loader"</span></span><br><span class="line">						options: &#123;</span><br><span class="line">                            modules: <span class="literal">true</span>, // 指定启用css modules</span><br><span class="line">                            localIdentName: <span class="string">'[name]__[local]--[hash:base64:5]'</span> // 指定css的类名格式</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,&#123;</span><br><span class="line">                        loader: <span class="string">"postcss-loader"</span></span><br><span class="line">                    &#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				</span><br><span class="line">			&#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">test</span>: /(\.jsx|\.js)$/,</span><br><span class="line">                use: &#123;</span><br><span class="line">                    loader: <span class="string">"babel-loader"</span></span><br><span class="line">					option: &#123;</span><br><span class="line">						 presets: [</span><br><span class="line">                            <span class="string">"env"</span>,</span><br><span class="line">							<span class="string">"react"</span></span><br><span class="line">                        ]</span><br><span class="line">					&#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                exclude: /node_modules/</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">	plugins: [</span><br><span class="line">		new webpack.BannerPlugin(<span class="string">'版权所有，翻版必究'</span>)</span><br><span class="line">		new HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: __dirname + &#123;tempalte file&#125;//new 一个这个插件的实例，并传入相关的参数</span><br><span class="line">        &#125;)</span><br><span class="line">		new webpack.HotModuleReplacementPlugin() //热加载插件</span><br><span class="line">    ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/08/初识webpack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          初识webpack
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/07/常见正则/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常见正则</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="入门webpack" data-title="入门webpack" data-url="http://yoursite.com/2018/03/08/入门webpack/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="入门webpack">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2018 whh
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
