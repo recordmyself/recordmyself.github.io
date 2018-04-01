@@ -106,7 +106,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/autoTool/" style="font-size: 20px;">autoTool</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-antd-program/" style="font-size: 10px;">react - antd - program</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/autoTool/" style="font-size: 20px;">autoTool</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-antd-program/" style="font-size: 10px;">react - antd - program</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
 					</div>
 				</section>
 				
@@ -161,6 +161,77 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-初始centos" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/24/初始centos/" class="article-date">
+  	<time datetime="2018-03-24T05:48:21.000Z" itemprop="datePublished">2018-03-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/24/初始centos/">
+        初始centos
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>虚拟机VMware-workStation 12 安装 centOs 6.4</p>
+<h2 id="网络通讯"><a href="#网络通讯" class="headerlink" title="网络通讯"></a>网络通讯</h2><h3 id="什么是ip"><a href="#什么是ip" class="headerlink" title="什么是ip"></a>什么是ip</h3><p>1、ip以二进制计算十进制展示<br>2、由4组8位(bit)组成，每组用点（.）分割<br>列如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">二进制：11111111.11111111.11111111.11111111 &lt;===&gt; 十进制: 255.255.255.255</span><br></pre></td></tr></table></figure></p>
+<p>3、学名：点分十进制计数（Dotted Decimal Notation）</p>
+<h3 id="什么是网络掩码"><a href="#什么是网络掩码" class="headerlink" title="什么是网络掩码"></a>什么是网络掩码</h3><p>1、如ip一样，网络掩码也是以二进制计算十进制展示，由4组8位(bit)组成，每组用点（.）分割的<br>2、用来确定当前的网络属于什么网段<br>列如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip: 172.16.122.204  网络掩码:255.255.0.0</span><br><span class="line">二进制：10101100.00010000.01111010.11001100   11111111.11111111.00000000.00000000</span><br></pre></td></tr></table></figure></p>
+<p>说明：172.16是网络号，122.204是主机号<br>注：掩码中网络部分和子网部分所在位都是1，主机部分所在位全为0</p>
+<h3 id="特殊ip"><a href="#特殊ip" class="headerlink" title="特殊ip"></a>特殊ip</h3><h3 id="私有ip"><a href="#私有ip" class="headerlink" title="私有ip"></a>私有ip</h3><h3 id="ip划分和子网划分"><a href="#ip划分和子网划分" class="headerlink" title="ip划分和子网划分"></a>ip划分和子网划分</h3><h2 id="网络查询"><a href="#网络查询" class="headerlink" title="网络查询"></a>网络查询</h2><h3 id="了解Linux下查看网络命令"><a href="#了解Linux下查看网络命令" class="headerlink" title="了解Linux下查看网络命令"></a>了解Linux下查看网络命令</h3><p>1、查看ip地址和子网掩码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure></p>
+<p>2、查看网络的所有信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig \all</span><br></pre></td></tr></table></figure></p>
+<p>3、启用和禁用网卡<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifdown + 网卡设备名   禁用</span><br><span class="line">ifup   + 网卡设备名   启用</span><br></pre></td></tr></table></figure></p>
+<p>4、网络状态查询（netstat）<br>-t: 列出TCP协议端口(传输控制协议：需网络等待)<br>-u: 列出UDP协议端口(用户数据协议：不需要等待)<br>-n: 不适用域名和服务名，使用ip地址和端口号<br>-l: 仅列出在监听的网络服务<br>-a: 列出所有网络连接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunl</span><br><span class="line">netstat -an</span><br><span class="line">	netstat -an | grep 状态 显示连接的数据</span><br><span class="line">	</span><br><span class="line">	wc install.log -&gt; netstat -an | grep 状态 | wc l  只显示连接的条数</span><br></pre></td></tr></table></figure></p>
+<p>5、路由查询（route)<br>查看路由表(最后一行是网关)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rout -n &lt;==&gt; netstat -rn</span><br></pre></td></tr></table></figure></p>
+<p>设置/删除网关<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rout add/del default gw xx.xx.xx.1</span><br></pre></td></tr></table></figure></p>
+<p>6、查看DNS<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nslookup + 域名</span><br><span class="line">nslookup + enter</span><br><span class="line">	server + 域名</span><br></pre></td></tr></table></figure></p>
+<h2 id="网络设置"><a href="#网络设置" class="headerlink" title="网络设置"></a>网络设置</h2><p>### </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-reactdemofirst" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -721,68 +792,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-js常见的错误" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/05/js常见的错误/" class="article-date">
-  	<time datetime="2018-03-05T03:35:12.000Z" itemprop="datePublished">2018-03-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/05/js常见的错误/">
-        js常犯的错误
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">DEMO</span><br><span class="line">	var a = 1;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">test0</span></span>()&#123;</span><br><span class="line">		console.log(a) // 1</span><br><span class="line">		a = 2;</span><br><span class="line">		console.log(a) //2</span><br><span class="line">	&#125;</span><br><span class="line">	test0()</span><br><span class="line"></span><br><span class="line">1、VAR</span><br><span class="line">	var a = 1;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">test1</span></span>() &#123;</span><br><span class="line">		console.log(a); </span><br><span class="line">		// undefinded 虽然函数外部声明a并赋值了，但是函数内部通过var重新声明a并且var有变量提升功能</span><br><span class="line">		var a= 2</span><br><span class="line">		console.log(a);</span><br><span class="line">		// 2 虽然a做了变量提升，但位于var下方，遵循就近原则</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	test1()</span><br><span class="line">	</span><br><span class="line">2、LET</span><br><span class="line">	<span class="built_in">let</span> b = 1;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">test2</span></span>() &#123;</span><br><span class="line">		console.log(b); </span><br><span class="line">		// b is not definded 虽然函数外部声明a并赋值了，但是函数内部通过<span class="built_in">let</span>重新声明了但是<span class="built_in">let</span>没有变量提升功能</span><br><span class="line">		<span class="built_in">let</span> b= 2</span><br><span class="line">		console.log(a);</span><br><span class="line">		// 2 </span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	test2()</span><br><span class="line">	</span><br><span class="line">3、块级域</span><br><span class="line">	var a = 1;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">test3</span></span>() &#123;</span><br><span class="line">		console.log9(a) // 1</span><br><span class="line">		&#123;</span><br><span class="line">			a = 5;</span><br><span class="line">			console.log(a) // 5</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(a) // 1</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="类型比较"><a href="#类型比较" class="headerlink" title="类型比较"></a>类型比较</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr1=[],</span><br><span class="line">	arr2 = [];</span><br><span class="line">console.log(arr1 === arr2) </span><br><span class="line">//<span class="literal">false</span> 两个数组永远不可能相等（数组是通过指针即地址来操作的）</span><br><span class="line">console.log(typeof(arr1) === typeof(arr2))</span><br><span class="line">//<span class="literal">true</span>  数组、对象、NULL都是object类型的变量</span><br><span class="line">console.log(instanceof(arr1) === object &amp;&amp; instanceof(arr1) === object)</span><br><span class="line">//<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h2 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1、对象内部</span><br><span class="line">	var obj = &#123;</span><br><span class="line">		name: <span class="string">'whh'</span>,</span><br><span class="line">		func: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			<span class="built_in">return</span> this.name;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	  console.log(obj.func()) // whh</span><br><span class="line">	</span><br><span class="line">2、对象外部</span><br><span class="line">	var obj1 = &#123;</span><br><span class="line">		name: <span class="string">'whh'</span>,</span><br><span class="line">		func: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			<span class="built_in">return</span> this.name;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	var nameFn = obj1.func;</span><br><span class="line">	console.log(nameFn()) </span><br><span class="line">	//undefined  通过赋值使得this由对象指向了window</span><br><span class="line">	</span><br><span class="line">	var obj2 = &#123;</span><br><span class="line">		name: <span class="string">'wjj'</span></span><br><span class="line">	&#125;</span><br><span class="line">	var nameFn1 = obj1.func;</span><br><span class="line">	console.log(nameFn1.apply(obj2) </span><br><span class="line">	// <span class="string">'wjj'</span> this -&gt; obj1 -&gt; window -&gt; obj2</span><br></pre></td></tr></table></figure>
-<h2 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li></ul>
 	</div>
 
       

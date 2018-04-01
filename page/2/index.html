@@ -106,7 +106,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/autoTool/" style="font-size: 20px;">autoTool</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-antd-program/" style="font-size: 10px;">react - antd - program</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/autoTool/" style="font-size: 20px;">autoTool</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-antd-program/" style="font-size: 10px;">react - antd - program</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
 					</div>
 				</section>
 				
@@ -161,6 +161,68 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-js常见的错误" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/05/js常见的错误/" class="article-date">
+  	<time datetime="2018-03-05T03:35:12.000Z" itemprop="datePublished">2018-03-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/05/js常见的错误/">
+        js常犯的错误
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">DEMO</span><br><span class="line">	var a = 1;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">test0</span></span>()&#123;</span><br><span class="line">		console.log(a) // 1</span><br><span class="line">		a = 2;</span><br><span class="line">		console.log(a) //2</span><br><span class="line">	&#125;</span><br><span class="line">	test0()</span><br><span class="line"></span><br><span class="line">1、VAR</span><br><span class="line">	var a = 1;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">test1</span></span>() &#123;</span><br><span class="line">		console.log(a); </span><br><span class="line">		// undefinded 虽然函数外部声明a并赋值了，但是函数内部通过var重新声明a并且var有变量提升功能</span><br><span class="line">		var a= 2</span><br><span class="line">		console.log(a);</span><br><span class="line">		// 2 虽然a做了变量提升，但位于var下方，遵循就近原则</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	test1()</span><br><span class="line">	</span><br><span class="line">2、LET</span><br><span class="line">	<span class="built_in">let</span> b = 1;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">test2</span></span>() &#123;</span><br><span class="line">		console.log(b); </span><br><span class="line">		// b is not definded 虽然函数外部声明a并赋值了，但是函数内部通过<span class="built_in">let</span>重新声明了但是<span class="built_in">let</span>没有变量提升功能</span><br><span class="line">		<span class="built_in">let</span> b= 2</span><br><span class="line">		console.log(a);</span><br><span class="line">		// 2 </span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	test2()</span><br><span class="line">	</span><br><span class="line">3、块级域</span><br><span class="line">	var a = 1;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">test3</span></span>() &#123;</span><br><span class="line">		console.log9(a) // 1</span><br><span class="line">		&#123;</span><br><span class="line">			a = 5;</span><br><span class="line">			console.log(a) // 5</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(a) // 1</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="类型比较"><a href="#类型比较" class="headerlink" title="类型比较"></a>类型比较</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr1=[],</span><br><span class="line">	arr2 = [];</span><br><span class="line">console.log(arr1 === arr2) </span><br><span class="line">//<span class="literal">false</span> 两个数组永远不可能相等（数组是通过指针即地址来操作的）</span><br><span class="line">console.log(typeof(arr1) === typeof(arr2))</span><br><span class="line">//<span class="literal">true</span>  数组、对象、NULL都是object类型的变量</span><br><span class="line">console.log(instanceof(arr1) === object &amp;&amp; instanceof(arr1) === object)</span><br><span class="line">//<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1、对象内部</span><br><span class="line">	var obj = &#123;</span><br><span class="line">		name: <span class="string">'whh'</span>,</span><br><span class="line">		func: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			<span class="built_in">return</span> this.name;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	  console.log(obj.func()) // whh</span><br><span class="line">	</span><br><span class="line">2、对象外部</span><br><span class="line">	var obj1 = &#123;</span><br><span class="line">		name: <span class="string">'whh'</span>,</span><br><span class="line">		func: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			<span class="built_in">return</span> this.name;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	var nameFn = obj1.func;</span><br><span class="line">	console.log(nameFn()) </span><br><span class="line">	//undefined  通过赋值使得this由对象指向了window</span><br><span class="line">	</span><br><span class="line">	var obj2 = &#123;</span><br><span class="line">		name: <span class="string">'wjj'</span></span><br><span class="line">	&#125;</span><br><span class="line">	var nameFn1 = obj1.func;</span><br><span class="line">	console.log(nameFn1.apply(obj2) </span><br><span class="line">	// <span class="string">'wjj'</span> this -&gt; obj1 -&gt; window -&gt; obj2</span><br></pre></td></tr></table></figure>
+<h2 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-sendCode" class="article article-type-post" itemscope itemprop="blogPost">
   
