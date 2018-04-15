@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>web-动画 | whh-blogs-record</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原生js动画@keyfram和animation属性12345678animation-name: 动画名称animation-duration: 动画持续时间animation-timing-function: 速度曲线	liner: 匀速执行 | ease-in: 低速开始 | ease-out: 低速结束 | ease-in-out: 以低速开始和结束	cubic-bezier（n,n,n）">
+<meta name="keywords" content="web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web-动画">
+<meta property="og:url" content="http://yoursite.com/2018/04/11/web-动画/index.html">
+<meta property="og:site_name" content="whh-blogs-record">
+<meta property="og:description" content="原生js动画@keyfram和animation属性12345678animation-name: 动画名称animation-duration: 动画持续时间animation-timing-function: 速度曲线	liner: 匀速执行 | ease-in: 低速开始 | ease-out: 低速结束 | ease-in-out: 以低速开始和结束	cubic-bezier（n,n,n）">
+<meta property="og:updated_time" content="2018-04-15T03:48:53.934Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web-动画">
+<meta name="twitter:description" content="原生js动画@keyfram和animation属性12345678animation-name: 动画名称animation-duration: 动画持续时间animation-timing-function: 速度曲线	liner: 匀速执行 | ease-in: 低速开始 | ease-out: 低速结束 | ease-in-out: 以低速开始和结束	cubic-bezier（n,n,n）">
+  
+    <link rel="alternative" href="/atom.xml" title="whh-blogs-record" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">whh</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/antd/" style="font-size: 10px;">antd</a> <a href="/tags/autoTool/" style="font-size: 13.33px;">autoTool</a> <a href="/tags/code/" style="font-size: 13.33px;">code</a> <a href="/tags/javaScript/" style="font-size: 16.67px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/react/" style="font-size: 16.67px;">react</a> <a href="/tags/ug/" style="font-size: 10px;">ug</a> <a href="/tags/web/" style="font-size: 20px;">web</a> <a href="/tags/webpack/" style="font-size: 13.33px;">webpack</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小技巧/" style="font-size: 10px;">小技巧</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">whh</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">whh</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-web-动画" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/11/web-动画/" class="article-date">
+  	<time datetime="2018-04-11T07:03:54.000Z" itemprop="datePublished">2018-04-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      web-动画
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="原生js动画"><a href="#原生js动画" class="headerlink" title="原生js动画"></a>原生js动画</h2><h3 id="keyfram和animation"><a href="#keyfram和animation" class="headerlink" title="@keyfram和animation"></a>@keyfram和animation</h3><p>属性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">animation-name: 动画名称</span><br><span class="line">animation-duration: 动画持续时间</span><br><span class="line">animation-timing-function: 速度曲线</span><br><span class="line">	liner: 匀速执行 | ease-in: 低速开始 | ease-out: 低速结束 | ease-in-out: 以低速开始和结束</span><br><span class="line">	cubic-bezier（n,n,n）: </span><br><span class="line">animation-delay: 动画延时时间</span><br><span class="line">animation-iteration-count: 动画播放的次数</span><br><span class="line">animation-direction: 动画是否方向执行  normal|alternate</span><br></pre></td></tr></table></figure></p>
+<p>demo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        html,body&#123;</span><br><span class="line">            height: 100%;</span><br><span class="line">            width: 100%;</span><br><span class="line">        &#125;</span><br><span class="line">        body&#123;</span><br><span class="line">            padding: 0;</span><br><span class="line">            margin: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">#test&#123;</span></span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background: pink;</span><br><span class="line">        &#125;</span><br><span class="line">        /*****************************************/</span><br><span class="line">        @keyframes moveLow</span><br><span class="line">        &#123; from &#123;height: 100px&#125; to &#123;height:10px;&#125; &#125;</span><br><span class="line"></span><br><span class="line">        @-moz-keyframes moveLow /* Firefox */</span><br><span class="line">        &#123; from &#123;height: 100px&#125; to &#123;height:10px;&#125; &#125;</span><br><span class="line"></span><br><span class="line">        @-webkit-keyframes moveLow /* Safari 和 Chrome */</span><br><span class="line">        &#123;  from &#123;height: 100px&#125; to &#123;height:10px;&#125; &#125;</span><br><span class="line"></span><br><span class="line">        @-o-keyframes moveLow /* Opera */</span><br><span class="line">        &#123;  from &#123;height: 100px&#125; to &#123;height:10px;&#125; &#125;</span><br><span class="line"></span><br><span class="line">        /*****************************************/</span><br><span class="line">        @keyframes moveHight</span><br><span class="line">        &#123; from &#123;height: 10px&#125; to &#123;height:100px;&#125; &#125;</span><br><span class="line"></span><br><span class="line">        @-moz-keyframes moveHight /* Firefox */</span><br><span class="line">        &#123; from &#123;height: 10px&#125; to &#123;height:100px;&#125; &#125;</span><br><span class="line"></span><br><span class="line">        @-webkit-keyframes moveHight /* Safari 和 Chrome */</span><br><span class="line">        &#123; from &#123;height: 10px&#125; to &#123;height:100px;&#125; &#125;</span><br><span class="line"></span><br><span class="line">        @-o-keyframes moveHight /* Opera */</span><br><span class="line">        &#123; from &#123;height: 10px&#125; to &#123;height:100px;&#125; &#125;</span><br><span class="line"></span><br><span class="line">        .changeLow&#123;</span><br><span class="line">            animation: moveLow 3s</span><br><span class="line">        &#125;</span><br><span class="line">        .changeHeight&#123;</span><br><span class="line">            animation: moveHight 3s</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"test"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">function</span> toggle(delay)&#123;</span><br><span class="line">    var timer = 0;</span><br><span class="line">    var <span class="built_in">test</span> = document.getElementById(<span class="string">'test'</span>)</span><br><span class="line">    test.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        timer++</span><br><span class="line">        <span class="keyword">if</span>(timer == 1)&#123;</span><br><span class="line">            this.classList.remove(<span class="string">"changeHeight"</span>) </span><br><span class="line">            this.classList.add(<span class="string">"changeLow"</span>)                       </span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            this.classList.remove(<span class="string">"changeLow"</span>)</span><br><span class="line">            this.classList.add(<span class="string">"changeHeight"</span>);</span><br><span class="line">            timer=0;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;)    </span><br><span class="line">&#125;</span><br><span class="line">toggle(1)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h3><p>属性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">transition-property: 规定设置过渡效果的 CSS 属性的名称</span><br><span class="line">transition-duration: 规定完成过渡效果需要多少秒或毫秒 </span><br><span class="line">transition-timing-function: 规定速度效果的速度曲线</span><br><span class="line">transition-delay: 定义过渡效果何时开始</span><br></pre></td></tr></table></figure></p>
+<p>demo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        html,</span><br><span class="line">        body &#123;</span><br><span class="line">            height: 100%;</span><br><span class="line">            width: 100%;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        body &#123;</span><br><span class="line">            padding: 0;</span><br><span class="line">            margin: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .menu &#123;</span><br><span class="line">            margin-bottom: 10px;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background: pink;</span><br><span class="line">            transition: all .5s;</span><br><span class="line">            -webkit-transition: all .5s linear;</span><br><span class="line">            -o-transition: all .5s linear;</span><br><span class="line">            -ms-transition: all .5s;</span><br><span class="line">            -moz-transition: all .5s;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .<span class="built_in">test</span> &#123;</span><br><span class="line">            height: 200px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"firstMenu"</span> class=<span class="string">'menu'</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">"secondMenu"</span> class=<span class="string">'menu'</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">"thirdMenu"</span> class=<span class="string">'menu'</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">"forthMenu"</span> class=<span class="string">'menu'</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">toggleMenu</span></span>()&#123;</span><br><span class="line">   var menu = document.querySelectorAll(<span class="string">'.menu'</span>)</span><br><span class="line">    Array.prototype.slice.apply(menu,null).forEach(<span class="keyword">function</span>(item)&#123;    </span><br><span class="line">        item.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="built_in">let</span> i=0;i&lt;menu.length;i++)&#123;</span><br><span class="line">                menu[i].classList.remove(<span class="string">'test'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">           this.classList.toggle(<span class="string">'test'</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">   &#125;)   </span><br><span class="line">&#125;</span><br><span class="line">toggleMenu()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><p>结合transition使用；demo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        html,</span><br><span class="line">        body &#123;</span><br><span class="line">            height: 100%;</span><br><span class="line">            width: 100%;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        body &#123;</span><br><span class="line">            padding: 0;</span><br><span class="line">            margin: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .menu &#123;</span><br><span class="line">            margin-bottom: 20px;</span><br><span class="line">            width: 150px;</span><br><span class="line">            height: 150px;</span><br><span class="line">            background: pink;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">            text-align: center;</span><br><span class="line">            transition: all .5s;</span><br><span class="line">            -webkit-transition: all .5s linear;</span><br><span class="line">            -o-transition: all .5s linear;</span><br><span class="line">            -ms-transition: all .5s;</span><br><span class="line">            -moz-transition: all .5s;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .<span class="built_in">test</span> &#123;</span><br><span class="line">            height: 200px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"firstMenu"</span> data-index=<span class="string">'1'</span> class=<span class="string">'menu'</span> onClick=<span class="string">'tansiform(event)'</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">"secondMenu"</span> data-index=<span class="string">'2'</span> class=<span class="string">'menu'</span> onClick=<span class="string">'tansiform(event)'</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">"thirdMenu"</span> data-index=<span class="string">'3'</span> class=<span class="string">'menu'</span> onClick=<span class="string">'tansiform(event)'</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">"forthMenu"</span> data-index=<span class="string">'4'</span> class=<span class="string">'menu'</span> onClick=<span class="string">'tansiform(event)'</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">"fifth"</span> data-index=<span class="string">'5'</span> class=<span class="string">'menu'</span> onClick=<span class="string">'tansiform(event)'</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">function</span> tansiform(event)&#123;</span><br><span class="line">    <span class="built_in">let</span> index = event.target.dataset.index;</span><br><span class="line">    switch(index)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'1'</span>:</span><br><span class="line">            event.target.style.transform = <span class="string">'translateX(10px)'</span>;</span><br><span class="line">            event.target.innerHTML = <span class="string">'translateX(10px)'</span>;</span><br><span class="line">            setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                event.target.style.transform = <span class="string">'translateY(10px)'</span>;</span><br><span class="line">                event.target.innerHTML = <span class="string">'translateY(10px)'</span>;</span><br><span class="line">            &#125;,500);</span><br><span class="line">            setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                event.target.style.transform = <span class="string">'translate(10px,20px)'</span>;</span><br><span class="line">                event.target.innerHTML = <span class="string">'translate(10px,20px) 2d,并且所有的动画结果都是和初始状态比较'</span>;</span><br><span class="line">            &#125;,1000);</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'2'</span>: </span><br><span class="line">            event.target.style.transform = <span class="string">'scaleX(2)'</span>;</span><br><span class="line">            event.target.innerHTML = <span class="string">'scaleX(2)'</span>;</span><br><span class="line">            setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                event.target.style.transform = <span class="string">'scaleY(2)'</span>;</span><br><span class="line">                event.target.innerHTML = <span class="string">'scaleY(2)'</span>;</span><br><span class="line">            &#125;,500)</span><br><span class="line">            setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                event.target.style.transform = <span class="string">'scale(2,2)'</span>;</span><br><span class="line">                event.target.innerHTML = <span class="string">'scale(2,2) 2d,并且所有的动画结果都是和初始状态比较'</span>;</span><br><span class="line">            &#125;,1000)</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'3'</span>: </span><br><span class="line">            event.target.style.transform = <span class="string">'rotateX(20deg)'</span>;</span><br><span class="line">            event.target.innerHTML = <span class="string">'rotateX(20deg) 水平中心轴'</span>;</span><br><span class="line">            setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                event.target.style.transform = <span class="string">'rotateY(20deg)'</span>;</span><br><span class="line">                event.target.innerHTML = <span class="string">'rotateY(20deg) 竖直中心轴'</span>;</span><br><span class="line">            &#125;,500)</span><br><span class="line">            setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                event.target.style.transform = <span class="string">'rotate(20deg)'</span>;</span><br><span class="line">                event.target.innerHTML = <span class="string">'rotate(20deg) 2d,并且所有的动画结果都是和初始状态比较,中心点旋转'</span>;</span><br><span class="line">            &#125;,1000)</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'4'</span>: </span><br><span class="line">            event.target.style.transform = <span class="string">'skewX(20deg)'</span>;</span><br><span class="line">            event.target.innerHTML = <span class="string">'skewX(20deg) 水平中心轴'</span>;</span><br><span class="line">            setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                event.target.style.transform = <span class="string">'skewY(20deg)'</span>;</span><br><span class="line">                event.target.innerHTML = <span class="string">'skewY(20deg) 竖直中心轴'</span>;</span><br><span class="line">            &#125;,500)</span><br><span class="line">            setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                event.target.style.transform = <span class="string">'skew(20deg,20deg)'</span>;</span><br><span class="line">                event.target.innerHTML = <span class="string">'skew(20deg,20deg) 2d,并且所有的动画结果都是和初始状态比较,中心点旋转'</span>;</span><br><span class="line">            &#125;,1000)</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'5'</span>:</span><br><span class="line">            event.target.style = <span class="string">'width: 400px'</span>;</span><br><span class="line">            event.target.innerHTML = <span class="string">'以上动画具有3d效果，必须打开perspectiv属性:'</span> +</span><br><span class="line">            <span class="string">'perspective	规定 3D 元素的透视效果'</span> + </span><br><span class="line">            <span class="string">'perspective-origin	规定 3D 元素的底部位置'</span> + </span><br><span class="line">            <span class="string">'backface-visibility	定义元素在不面对屏幕时是否可见'</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="jquery动画"><a href="#jquery动画" class="headerlink" title="jquery动画"></a>jquery动画</h2><h3 id="animate"><a href="#animate" class="headerlink" title="animate()"></a>animate()</h3><h2 id="animate-css动画"><a href="#animate-css动画" class="headerlink" title="animate.css动画"></a>animate.css动画</h2>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/13/web-前端开发标准/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          web-前端开发标准
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/11/web-js基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js基础</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="web-动画" data-title="web-动画" data-url="http://yoursite.com/2018/04/11/web-动画/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="web-动画">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2018 whh
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

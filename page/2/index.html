@@ -106,7 +106,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/autoTool/" style="font-size: 20px;">autoTool</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-antd-program/" style="font-size: 10px;">react - antd - program</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/antd/" style="font-size: 10px;">antd</a> <a href="/tags/autoTool/" style="font-size: 13.33px;">autoTool</a> <a href="/tags/code/" style="font-size: 13.33px;">code</a> <a href="/tags/javaScript/" style="font-size: 16.67px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/react/" style="font-size: 16.67px;">react</a> <a href="/tags/ug/" style="font-size: 10px;">ug</a> <a href="/tags/web/" style="font-size: 20px;">web</a> <a href="/tags/webpack/" style="font-size: 13.33px;">webpack</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小技巧/" style="font-size: 10px;">小技巧</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
 					</div>
 				</section>
 				
@@ -162,10 +162,462 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-js常见的错误" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-web-初识MongoDB" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/03/05/js常见的错误/" class="article-date">
+      <a href="/2018/03/09/web-初识MongoDB/" class="article-date">
+  	<time datetime="2018-03-09T06:30:55.000Z" itemprop="datePublished">2018-03-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/09/web-初识MongoDB/">
+        初识MongoDB
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装MongoDB"><a href="#安装MongoDB" class="headerlink" title="安装MongoDB"></a>安装MongoDB</h2><p>###下载并安装MongoDB软件和以管理员身份打开命令行<br>1、windows-&gt;附件-&gt;cdm-右键以管理员身份运行<br>2、C:\windows\system32\cmd-右键以管理员身份运行</p>
+<h3 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h3><p>1、在软件同级目录下创建data/db和data/log文件夹，并在log文件夹下创建config.log<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//config.log</span><br><span class="line">dbpath = &#123;path&#125;\db</span><br><span class="line">logpath = &#123;path&#125;\mongo.log</span><br></pre></td></tr></table></figure></p>
+<h3 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h3><p>1、以管理员身份打开命令行<br>2、进入MongoDB安装文件夹下的bin文件夹<br>3、执行{path}/mongod.exe –dbpath {path}/db<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//出现以下提示，表示开启成功</span><br><span class="line">D:\MongoDB\bin&gt;D:/MongoDB/bin/mongod.exe --dbpath D:/data/db</span><br><span class="line">2018-03-09T01:09:59.034-0700 I CONTROL  [initandlisten] MongoDB starting : pid=2804 port=27017 dbpath=D:/data/db 64-bit host=MACHENI-4S7IHV3</span><br><span class="line">2018-03-09T01:09:59.034-0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2</span><br><span class="line">2018-03-09T01:09:59.035-0700 I CONTROL  [initandlisten] db version v3.4.6</span><br><span class="line">2018-03-09T01:09:59.035-0700 I CONTROL  [initandlisten] git version: c55eb86ef46ee7aede3b1e2a5d184a7df4bfb5b5</span><br><span class="line">2018-03-09T01:09:59.035-0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016</span><br><span class="line">2018-03-09T01:09:59.035-0700 I CONTROL  [initandlisten] allocator: tcmalloc</span><br><span class="line">2018-03-09T01:09:59.035-0700 I CONTROL  [initandlisten] modules: none</span><br><span class="line">2018-03-09T01:09:59.036-0700 I CONTROL  [initandlisten] build environment:</span><br><span class="line">2018-03-09T01:09:59.037-0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl</span><br><span class="line">2018-03-09T01:09:59.037-0700 I CONTROL  [initandlisten]     distarch: x86_64</span><br><span class="line">2018-03-09T01:09:59.037-0700 I CONTROL  [initandlisten]     target_arch: x86_64</span><br><span class="line">2018-03-09T01:09:59.037-0700 I CONTROL  [initandlisten] options: &#123; storage: &#123; dbPath: <span class="string">"D:/data/db"</span> &#125; &#125;</span><br><span class="line">2018-03-09T01:09:59.038-0700 I -        [initandlisten] Detected data files <span class="keyword">in</span> D:/data/db created by the <span class="string">'wiredTiger'</span> storage engine, so setting the active storage engine to <span class="string">'wiredTiger'</span>.</span><br><span class="line">2018-03-09T01:09:59.038-0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3528M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=<span class="literal">false</span>,statistics=(fast),<span class="built_in">log</span>=(enabled=<span class="literal">true</span>,archive=<span class="literal">true</span>,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(<span class="built_in">wait</span>=60,log_size=2GB),statistics_log=(<span class="built_in">wait</span>=0),</span><br><span class="line">2018-03-09T01:10:00.037-0700 I CONTROL  [initandlisten]</span><br><span class="line">2018-03-09T01:10:00.038-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled <span class="keyword">for</span> the database.</span><br><span class="line">2018-03-09T01:10:00.039-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.</span><br><span class="line">2018-03-09T01:10:00.039-0700 I CONTROL  [initandlisten]</span><br><span class="line">2018-03-09T16:10:00.403+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory <span class="string">'D:/data/db/diagnostic.data'</span></span><br></pre></td></tr></table></figure></p>
+<p>4、{path}mongo.exe 链接MongoDB</p>
+<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>1、Path的配置：path可以看成一个全局变量，当要打开一个程序时，会查找到程序的路径，配置环境变量后，就可以直接使用程序文件。也就是说当将一个应用程序配置了环境变量时，他的路径就可以在全局使用了。环境变量就是一个寻找路径的关系<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我的电脑——右键——属性——高级系统设置——环境变量——系统变量——path——把mongodb的安装目录的bin文件路径复制进去——保存即可</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置本地服务"><a href="#配置本地服务" class="headerlink" title="配置本地服务"></a>配置本地服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod.exe --logpath D:\data\<span class="built_in">log</span>\mongodb.log --logappend --dbpath D:\data\db --directoryperdb --serviceName MongoDB --install</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-web-初识webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/08/web-初识webpack/" class="article-date">
+  	<time datetime="2018-03-08T01:17:07.000Z" itemprop="datePublished">2018-03-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/08/web-初识webpack/">
+        初识webpack
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是webpack"><a href="#什么是webpack" class="headerlink" title="什么是webpack"></a>什么是webpack</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WebPack可以看做是模块打包机：分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其转换和打包为合适的格式供浏览器使用</span><br><span class="line">Webpack的处理速度更快更直接，能打包更多不同类型的文件</span><br></pre></td></tr></table></figure>
+<h2 id="webpck工作方式"><a href="#webpck工作方式" class="headerlink" title="webpck工作方式"></a>webpck工作方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，</span><br><span class="line">使用loaders处理它们，最后打包为一个（或多个）浏览器可识别的JavaScript文件</span><br></pre></td></tr></table></figure>
+<h2 id="webpack使用"><a href="#webpack使用" class="headerlink" title="webpack使用"></a>webpack使用</h2><p>指定入口文件后，webpack将自动识别项目所依赖的其它文件</p>
+<h3 id="全局安装使用"><a href="#全局安装使用" class="headerlink" title="全局安装使用"></a>全局安装使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack &#123;entry file&#125; &#123; destination <span class="keyword">for</span> bundle file&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="局部安装使用"><a href="#局部安装使用" class="headerlink" title="局部安装使用"></a>局部安装使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_moudles/.bin/webpack &#123;entry file&#125; &#123; destination <span class="keyword">for</span> bundle file&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="DOME"><a href="#DOME" class="headerlink" title="DOME"></a>DOME</h3><p>在当前根目录下创建webpack.config.js,并初始配置;之后便可直接在终端输入webpack即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">moudle.export = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	entry: __dirname + &#123;entry file&#125;</span><br><span class="line">	//入口配置：__dirname是node.js中的一个全局变量，它指向当前执行脚本所在的目录</span><br><span class="line">	output: &#123;</span><br><span class="line">		path: __dirname + &#123; destination folder&#125;,</span><br><span class="line">		name： <span class="string">'fileName'</span></span><br><span class="line">	&#125;</span><br><span class="line">	//打包输出配置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-web-入门webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/08/web-入门webpack/" class="article-date">
+  	<time datetime="2018-03-08T01:17:07.000Z" itemprop="datePublished">2018-03-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/08/web-入门webpack/">
+        入门webpack
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Webpack的强大功能</p>
+<h2 id="使用webpack构建本地服务器"><a href="#使用webpack构建本地服务器" class="headerlink" title="使用webpack构建本地服务器"></a>使用webpack构建本地服务器</h2><p>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev webpack-dev-server</span><br></pre></td></tr></table></figure></p>
+<p>2、配置项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1）contentBase: </span><br><span class="line">	默认webpack-dev-server会为根文件夹提供本地服务器，如果想为另外一个目录下的文件提供本地服务器，应该在这里设置其所在目录</span><br><span class="line">2）port: </span><br><span class="line">	设置默认监听端口，如果省略，默认为”8080“</span><br><span class="line">3）iniline: </span><br><span class="line">	设置为<span class="literal">true</span>，当源文件改变时会自动刷新页面</span><br><span class="line">4）historyApiFallback: </span><br><span class="line">	在开发单页应用时非常有用，它依赖于HTML5 <span class="built_in">history</span> API，如果设置为<span class="literal">true</span>，所有的跳转将指向index.html</span><br></pre></td></tr></table></figure></p>
+<p>3、在package.json中的scripts对象中添加如下命令，用以开启本地服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>,</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"webpack"</span>,</span><br><span class="line">    <span class="string">"server"</span>: <span class="string">"webpack-dev-server --open"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<h2 id="加载器（Loader作用于文件）"><a href="#加载器（Loader作用于文件）" class="headerlink" title="加载器（Loader作用于文件）"></a>加载器（Loader作用于文件）</h2><p>通过使用不同的loader，webpack有能力调用外部的脚本或工具，实现对不同格式的文件的处理<br>1、配置项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1）<span class="built_in">test</span>：一个用以匹配loaders所处理文件的拓展名的正则表达式（必须）</span><br><span class="line">2）loader：loader的名称（必须）</span><br><span class="line">3）include/exclude:手动添加必须处理的文件（文件夹）或屏蔽不需要处理的文件（文件夹）（可选）；</span><br><span class="line">4）query：为loaders提供额外的设置选项（可选</span><br></pre></td></tr></table></figure></p>
+<h3 id="Bable"><a href="#Bable" class="headerlink" title="Bable"></a>Bable</h3><p>Babel其实是一个编译JavaScript的平台,使项目能使用最新的JavaScript代码（ES6，ES7…）和基于JavaScript进行了拓展的语言<br>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react</span><br></pre></td></tr></table></figure></p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>css-loader使你能够使用类似@import 和 url(…)的方法实现 require()的功能;<br>style-loader将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中<br>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev style-loader css-loader</span><br></pre></td></tr></table></figure></p>
+<h4 id="Moudle-css"><a href="#Moudle-css" class="headerlink" title="Moudle css"></a>Moudle css</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">所有的类名，动画名默认都只作用于当前模块,这样做有效避免了全局污染(相同的类名也不会造成不同组件之间的污染)</span><br></pre></td></tr></table></figure>
+<h4 id="css预加载"><a href="#css预加载" class="headerlink" title="css预加载"></a>css预加载</h4><p>Sass 和 Less 之类的预处理器是对原生CSS的拓展，它们允许你使用类似于variables, nesting, mixins, inheritance等<br>不存在于CSS中的特性来写CSS，CSS预处理器可以这些特殊类型的语句转化为浏览器可识别的CSS语句<br>PostCSS是一种CSS的处理平台来，能为CSS代码自动添加适应不同浏览器的CSS前缀</p>
+<p>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev postcss-loader autoprefixer</span><br></pre></td></tr></table></figure></p>
+<p>接下来，在webpack配置文件中添加postcss-loader，在根目录新建postcss.config.js,并添加如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// postcss.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    plugins: [</span><br><span class="line">        require(<span class="string">'autoprefixer'</span>)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、常用预加载器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1）Less Loader</span><br><span class="line">2）Sass Loader</span><br><span class="line">3）Stylus Loader</span><br></pre></td></tr></table></figure></p>
+<h2 id="插件Plugs"><a href="#插件Plugs" class="headerlink" title="插件Plugs"></a>插件Plugs</h2><p>插件（Plugins 作用于项目）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务</p>
+<h3 id="HtmlWebpackPlugin"><a href="#HtmlWebpackPlugin" class="headerlink" title="HtmlWebpackPlugin"></a>HtmlWebpackPlugin</h3><p>1、安装依赖项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev html-webpack-plugin</span><br></pre></td></tr></table></figure></p>
+<p>2、这个插件自动完成了我们之前手动做的一些事情，在正式使用之前需要对一直以来的项目结构做一些更改<br>    1）移除public文件夹，利用此插件，index.html文件会自动生成，此外CSS已经通过前面的操作打包到JS中了;<br>    2）在app目录下，创建一个index.tmpl.html文件模板，这个模板包含title等必须元素，<br>    3）在编译过程中，插件会依据此模板生成最终的html页面，会自动添加所依赖的 css, js，favicon等文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Webpack Sample Project&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">'root'</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Hot-Module-Replacement"><a href="#Hot-Module-Replacement" class="headerlink" title="Hot Module Replacement"></a>Hot Module Replacement</h3><p>它允许你在修改组件代码后，自动刷新实时预览修改后的效果<br>1、配置项：在webpack配置文件中添加HMR插件;在Webpack Dev Server中添加“hot”参数<br>2、HMR是一个webpack插件，它让你能浏览器中实时观察模块修改后的效果，但是如果你想让它工作，需要对模块进行额外的配额<br>3、Bable中的react-transform-hrm插件可以在不对React模块进行额外的配置的前提下让HMR正常工作:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-plugin-react-transform react-transform-hmr</span><br></pre></td></tr></table></figure></p>
+<h3 id="babelrc配置"><a href="#babelrc配置" class="headerlink" title=".babelrc配置"></a>.babelrc配置</h3><p>Babel其实可以完全在 webpack.config.js 中进行配置，但是考虑到babel具有非常多的配置选项，在单一的webpack.config.js文件中进行配置往往使得这个文件显得太复杂，因此一些开发者支持把babel的配置选项放在一个单独的名为 “.babelrc” 的配置文件中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//.babelrc</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"presets"</span>: [<span class="string">"react"</span>, <span class="string">"env"</span>],</span><br><span class="line">	<span class="string">"env"</span>: &#123;</span><br><span class="line">	  elopment<span class="string">": &#123;</span></span><br><span class="line"><span class="string">		 "</span>plugins<span class="string">": [["</span>react-transform<span class="string">", &#123;</span></span><br><span class="line"><span class="string">			"</span>transforms<span class="string">": [&#123;</span></span><br><span class="line"><span class="string">			   "</span>transform<span class="string">": "</span>react-transform-hmr<span class="string">",         </span></span><br><span class="line"><span class="string">				"</span>imports<span class="string">": ["</span>react<span class="string">"],         </span></span><br><span class="line"><span class="string">				"</span>locals<span class="string">": ["</span>module<span class="string">"]</span></span><br><span class="line"><span class="string">			&#125;]</span></span><br><span class="line"><span class="string">		  &#125;]]</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">const webpack = require(<span class="string">'webpack'</span>);</span><br><span class="line">const HtmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    entry: __dirname + &#123;entry file&#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: __dirname + &#123;destination folder&#125;,</span><br><span class="line">        filename: &#123;fileName&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    devtool: <span class="string">'eval-source-map'</span>,</span><br><span class="line">	//便于编译后的调试</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: <span class="string">"./public"</span>, //本地服务器所加载的页面所在的目录</span><br><span class="line">        historyApiFallback: <span class="literal">true</span>, //不跳转</span><br><span class="line">        inline: <span class="literal">true</span> //实时刷新</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">test</span>: /(\.css|\.)$/,</span><br><span class="line">				user:&#123;</span><br><span class="line">					&#123;</span><br><span class="line">                        loader: <span class="string">"style-loader"</span></span><br><span class="line">                    &#125;, &#123;</span><br><span class="line">                        loader: <span class="string">"css-loader"</span></span><br><span class="line">						options: &#123;</span><br><span class="line">                            modules: <span class="literal">true</span>, // 指定启用css modules</span><br><span class="line">                            localIdentName: <span class="string">'[name]__[local]--[hash:base64:5]'</span> // 指定css的类名格式</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,&#123;</span><br><span class="line">                        loader: <span class="string">"postcss-loader"</span></span><br><span class="line">                    &#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				</span><br><span class="line">			&#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">test</span>: /(\.jsx|\.js)$/,</span><br><span class="line">                use: &#123;</span><br><span class="line">                    loader: <span class="string">"babel-loader"</span></span><br><span class="line">					option: &#123;</span><br><span class="line">						 presets: [</span><br><span class="line">                            <span class="string">"env"</span>,</span><br><span class="line">							<span class="string">"react"</span></span><br><span class="line">                        ]</span><br><span class="line">					&#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                exclude: /node_modules/</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">	plugins: [</span><br><span class="line">		new webpack.BannerPlugin(<span class="string">'版权所有，翻版必究'</span>)</span><br><span class="line">		new HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: __dirname + &#123;tempalte file&#125;//new 一个这个插件的实例，并传入相关的参数</span><br><span class="line">        &#125;)</span><br><span class="line">		new webpack.HotModuleReplacementPlugin() //热加载插件</span><br><span class="line">    ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-web-常见正则" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/07/web-常见正则/" class="article-date">
+  	<time datetime="2018-03-07T11:13:51.000Z" itemprop="datePublished">2018-03-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/07/web-常见正则/">
+        常见正则
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="13个常见正则表达式"><a href="#13个常见正则表达式" class="headerlink" title="13个常见正则表达式"></a>13个常见正则表达式</h2><h3 id="数字、26个英文字母或者下划线组成的字符串"><a href="#数字、26个英文字母或者下划线组成的字符串" class="headerlink" title="数字、26个英文字母或者下划线组成的字符串"></a>数字、26个英文字母或者下划线组成的字符串</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^\w+$/ 或 /^\w&#123;3,20&#125;$/</span><br></pre></td></tr></table></figure>
+<h3 id="中文字符的表达式"><a href="#中文字符的表达式" class="headerlink" title="中文字符的表达式"></a>中文字符的表达式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[\u4e00-\u9fa5]/</span><br></pre></td></tr></table></figure>
+<h3 id="手机号码表达式"><a href="#手机号码表达式" class="headerlink" title="手机号码表达式"></a>手机号码表达式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^(((13[0-9]&#123;1&#125;)|(15[0-9]&#123;1&#125;)|(18[0-9]&#123;1&#125;)|(17[0-9]&#123;1&#125;))+\d&#123;8&#125;)$/</span><br></pre></td></tr></table></figure>
+<h3 id="邮箱表达式"><a href="#邮箱表达式" class="headerlink" title="邮箱表达式"></a>邮箱表达式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]&#123;2,5&#125;$/</span><br></pre></td></tr></table></figure>
+<h3 id="帐号是否合法（字母开头，允许5-16字节，允许字母数字下划线）"><a href="#帐号是否合法（字母开头，允许5-16字节，允许字母数字下划线）" class="headerlink" title="帐号是否合法（字母开头，允许5-16字节，允许字母数字下划线）"></a>帐号是否合法（字母开头，允许5-16字节，允许字母数字下划线）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^[a-zA-Z][a-zA-Z0-9_]&#123;4,15&#125;$/</span><br></pre></td></tr></table></figure>
+<h3 id="强密码-必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间"><a href="#强密码-必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间" class="headerlink" title="强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)"></a>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;$/</span><br></pre></td></tr></table></figure>
+<h3 id="身份证号-15位、18位数字-，最后一位是校验位，可能为数字或字符X"><a href="#身份证号-15位、18位数字-，最后一位是校验位，可能为数字或字符X" class="headerlink" title="身份证号(15位、18位数字)，最后一位是校验位，可能为数字或字符X"></a>身份证号(15位、18位数字)，最后一位是校验位，可能为数字或字符X</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/(^\d&#123;15&#125;$)|(^\d&#123;18&#125;$)|(^\d&#123;17&#125;(\d|X|x)$)/</span><br></pre></td></tr></table></figure>
+<h3 id="金额校验-非零开头的最多带两位小数的数字"><a href="#金额校验-非零开头的最多带两位小数的数字" class="headerlink" title="金额校验(非零开头的最多带两位小数的数字)"></a>金额校验(非零开头的最多带两位小数的数字)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^([1-9][0-9]*)+(.[0-9]&#123;1,2&#125;)?$/</span><br></pre></td></tr></table></figure>
+<h3 id="域名表达式"><a href="#域名表达式" class="headerlink" title="域名表达式"></a>域名表达式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[a-zA-Z0-9][-a-zA-Z0-9]&#123;0,62&#125;(/.[a-zA-Z0-9][-a-zA-Z0-9]&#123;0,62&#125;)+/.?/</span><br></pre></td></tr></table></figure>
+<h3 id="QQ号表达式"><a href="#QQ号表达式" class="headerlink" title="QQ号表达式"></a>QQ号表达式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[1-9][0-9]&#123;4,&#125;/</span><br></pre></td></tr></table></figure>
+<h3 id="日期表达式"><a href="#日期表达式" class="headerlink" title="日期表达式"></a>日期表达式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^\d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;/</span><br></pre></td></tr></table></figure>
+<h3 id="中国邮政编码表达式"><a href="#中国邮政编码表达式" class="headerlink" title="中国邮政编码表达式"></a>中国邮政编码表达式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[1-9]\d&#123;5&#125;(?!\d)/</span><br></pre></td></tr></table></figure>
+<h3 id="ip地址表达式"><a href="#ip地址表达式" class="headerlink" title="ip地址表达式"></a>ip地址表达式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/(?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.)&#123;3&#125;(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))/</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则/">正则</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-service-java命名规范" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/06/service-java命名规范/" class="article-date">
+  	<time datetime="2018-03-06T08:13:14.000Z" itemprop="datePublished">2018-03-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/06/service-java命名规范/">
+        java命名规范
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.cnblogs.com/foreverly/articles/6581198.html</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-web-入门react" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/05/web-入门react/" class="article-date">
+  	<time datetime="2018-03-05T09:02:20.000Z" itemprop="datePublished">2018-03-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/05/web-入门react/">
+        进阶react
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="create-react-app"><a href="#create-react-app" class="headerlink" title="create-react-app"></a>create-react-app</h2><h3 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、nodejs</span><br><span class="line">2、安装react脚手架</span><br><span class="line">	npm install create-react-app -g</span><br><span class="line">3、创建项目</span><br><span class="line">	create-react-app <span class="string">'program'</span></span><br><span class="line">4、启动项目</span><br><span class="line">	npm start</span><br></pre></td></tr></table></figure>
+<h3 id="index-js文件"><a href="#index-js文件" class="headerlink" title="index.js文件"></a>index.js文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import React from <span class="string">'react'</span>;</span><br><span class="line">import ReactDOM from <span class="string">'react-dom'</span>;</span><br><span class="line">import <span class="string">'./index.css'</span>;</span><br><span class="line">import App from <span class="string">'./App'</span>;</span><br><span class="line">import registerServiceWorker from <span class="string">'./registerServiceWorker'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, document.getElementById(<span class="string">'root'</span>));</span><br><span class="line">registerServiceWorker();</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-web-初识react" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/05/web-初识react/" class="article-date">
+  	<time datetime="2018-03-05T08:14:00.000Z" itemprop="datePublished">2018-03-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/05/web-初识react/">
+        初识react
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>React 使用 JSX 来替代常规的 JavaScript;<br>JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化;<br>它是类型安全的，在编译过程中就能发现错误;<br>使用 JSX 编写模板更加简单快速;</p>
+<h2 id="react-js"><a href="#react-js" class="headerlink" title="react.js"></a>react.js</h2><h3 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//react.min.js - React 的核心库</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/react/15.4.2/react.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">//react-dom.min.js - 提供与 DOM 相关的功能</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">//babel.min.js - Babel 可以将 ES6 代码转为 ES5 代码，这样我们就能在目前不支持 ES6 浏览器上执行 React 代码</span><br><span class="line">//babel.min.js - Babel 可以将 ES6 代码转为 ES5 代码，这样我们就能在目前不支持 ES6 浏览器上执行 React 代码</span><br><span class="line">//Babel 内嵌了对 JSX 的支持。通过将 Babel 和 babel-sublime 包（package）一同使用可以让源码的语法渲染上升到一个全新的水平</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="orgDemo"><a href="#orgDemo" class="headerlink" title="orgDemo"></a>orgDemo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  &lt;div id=<span class="string">"example"</span>&gt;&lt;/div&gt;</span><br><span class="line">  &lt;script <span class="built_in">type</span>=<span class="string">"text/babel"</span>&gt;</span><br><span class="line">    ReactDOM.render(</span><br><span class="line">&lt;div&gt;</span><br><span class="line">	&lt;h1&gt;起步&lt;/h1&gt;</span><br><span class="line">	&lt;h2&gt;跑步&lt;/h2&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!&lt;/h1&gt;,</span><br><span class="line">      document.getElementById(<span class="string">'example'</span>)</span><br><span class="line">    );</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1、组件添加</span><br><span class="line"></span><br><span class="line">	1) html标签</span><br><span class="line">		var myDivElement = &lt;div className=<span class="string">"foo"</span> /&gt;;</span><br><span class="line">		ReactDOM.render(myDivElement, document.getElementById(<span class="string">'example'</span>));</span><br><span class="line">		</span><br><span class="line">	2) react组件</span><br><span class="line">		var HelloMessage = React.createClass(&#123;</span><br><span class="line">			render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">				<span class="built_in">return</span> &lt;h1&gt;Hello World！&lt;/h1&gt;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;); </span><br><span class="line">		ReactDOM.render(</span><br><span class="line">			&lt;HelloMessage /&gt;,</span><br><span class="line">			document.getElementById(<span class="string">'example'</span>)</span><br><span class="line">		);</span><br><span class="line">		</span><br><span class="line">2、数组添加</span><br><span class="line">	var arr = [</span><br><span class="line">		&lt;h1&gt;菜鸟教程&lt;/h1&gt;,</span><br><span class="line">		&lt;h2&gt;学的不仅是技术，更是梦想！&lt;/h2&gt;,</span><br><span class="line">	];</span><br><span class="line">	ReactDOM.render(</span><br><span class="line">		&lt;div&gt;&#123;arr&#125;&lt;/div&gt;,</span><br><span class="line">		document.getElementById(<span class="string">'example'</span>)</span><br><span class="line">	);</span><br></pre></td></tr></table></figure>
+<h3 id="添加样式"><a href="#添加样式" class="headerlink" title="添加样式"></a>添加样式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var myStyle = &#123;</span><br><span class="line">    fontSize: 100,</span><br><span class="line">    color: <span class="string">'#FF0000'</span></span><br><span class="line">&#125;;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;h1 style = &#123;myStyle&#125;&gt;<span class="built_in">test</span>&lt;/h1&gt;,</span><br><span class="line">    document.getElementById(<span class="string">'example'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请查看  [create-react-app](https://recordmyself.github.io/2018/03/05/react%E8%BF%9B%E9%98%B6/) 文章</span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、多个标签需要一个父标签包着（一个模板只有一个根标签）</span><br><span class="line">2、<span class="keyword">for</span> =&gt; htmlFor  class =&gt; className</span><br><span class="line">3、&#123;&#125; 中可以写js表达式</span><br><span class="line">4、标签内的注释&#123;/* */&#125;、标签外的注释/* */</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-web-js常见的错误" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/05/web-js常见的错误/" class="article-date">
   	<time datetime="2018-03-05T03:35:12.000Z" itemprop="datePublished">2018-03-05</time>
 </a>
     </div>
@@ -179,7 +631,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/05/js常见的错误/">
+      <a class="article-title" href="/2018/03/05/web-js常见的错误/">
         js常犯的错误
         
       </a>
@@ -203,7 +655,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 	</div>
 
       
@@ -224,10 +676,10 @@
 
 
   
-    <article id="post-sendCode" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-web-sendCode" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/03/01/sendCode/" class="article-date">
+      <a href="/2018/03/01/web-sendCode/" class="article-date">
   	<time datetime="2018-03-01T03:21:50.000Z" itemprop="datePublished">2018-03-01</time>
 </a>
     </div>
@@ -241,7 +693,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/01/sendCode/">
+      <a class="article-title" href="/2018/03/01/web-sendCode/">
         发送验证码
         
       </a>
@@ -262,7 +714,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/code/">code</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/code/">code</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 	</div>
 
       
@@ -283,10 +735,10 @@
 
 
   
-    <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-web-gulp" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/02/27/gulp/" class="article-date">
+      <a href="/2018/02/27/web-gulp/" class="article-date">
   	<time datetime="2018-02-27T05:52:33.000Z" itemprop="datePublished">2018-02-27</time>
 </a>
     </div>
@@ -300,7 +752,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/27/gulp/">
+      <a class="article-title" href="/2018/02/27/web-gulp/">
         gulp
         
       </a>
@@ -323,321 +775,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/autoTool/">autoTool</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-sassRuby" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/02/27/sassRuby/" class="article-date">
-  	<time datetime="2018-02-27T05:51:49.000Z" itemprop="datePublished">2018-02-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/27/sassRuby/">
-        sassRuby
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>sass基于Ruby语言开发而成，因此安装sass前需要安装 <a href="https://rubyinstaller.org/downloads/" target="_blank" rel="noopener">Ruby</a></p>
-<h2 id="安装Ruby-、Sass、Compass和替换Gem"><a href="#安装Ruby-、Sass、Compass和替换Gem" class="headerlink" title="安装Ruby 、Sass、Compass和替换Gem"></a>安装Ruby 、Sass、Compass和替换Gem</h2><h3 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、安装过程中请注意勾选Add Ruby executables to your PATH添加到系统环境变量</span><br><span class="line">2、ruby -v查看ruby版本信息</span><br></pre></td></tr></table></figure>
-<h3 id="Gem"><a href="#Gem" class="headerlink" title="Gem"></a>Gem</h3><p>国内网络的问题导致gem源间歇性中断因此我们需要更换gem源<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.删除原gem源</span><br><span class="line">gem sources --remove https://rubygems.org/</span><br><span class="line"></span><br><span class="line">2.添加国内淘宝源</span><br><span class="line">gem sources -a https://ruby.taobao.org/</span><br><span class="line"></span><br><span class="line">3.打印是否替换成功</span><br><span class="line">gem sources -l</span><br><span class="line"></span><br><span class="line">4.更换成功后打印如下</span><br><span class="line">*** CURRENT SOURCES ***</span><br><span class="line">https://ruby.taobao.org/</span><br></pre></td></tr></table></figure></p>
-<h3 id="Sass和compass"><a href="#Sass和compass" class="headerlink" title="Sass和compass"></a>Sass和compass</h3><p>Ruby自带一个叫做RubyGems的系统，用来安装基于Ruby的软件。我们可以使用这个系统来 轻松地安装Sass和Compass。要安装最新版本的Sass和Compass<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、gem install sass</span><br><span class="line">2、sass -v查看版本信息</span><br><span class="line">3、gem install compass</span><br><span class="line">4、compass -v查看版本信息</span><br></pre></td></tr></table></figure></p>
-<h2 id="编译Sass"><a href="#编译Sass" class="headerlink" title="编译Sass"></a>编译Sass</h2><p>sass编译有很多种方式，如命令行编译模式、sublime插件SASS-Build、编译软件koala、前端自动化软件codekit、Grunt打造前端自动化工作流grunt-sass、Gulp打造前端自动化工作流gulp-ruby-sass等</p>
-<h3 id="命令行编译"><a href="#命令行编译" class="headerlink" title="命令行编译"></a>命令行编译</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//单文件转换命令</span><br><span class="line">sass input.scss output.css</span><br><span class="line"></span><br><span class="line">//单文件监听命令</span><br><span class="line">sass --watch input.scss:output.css</span><br><span class="line"></span><br><span class="line">//如果你有很多的sass文件的目录，你也可以告诉sass监听整个目录：</span><br><span class="line">sass --watch app/sass:public/stylesheets</span><br></pre></td></tr></table></figure>
-<h3 id="命令行编译配置选项"><a href="#命令行编译配置选项" class="headerlink" title="命令行编译配置选项"></a>命令行编译配置选项</h3><p>命令行编译sass有配置选项，如编译过后css排版、生成调试map、开启debug信息等，可通过使用命令sass -v查看详细。我们一般常用两种–style和–sourcemap<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//编译格式</span><br><span class="line">sass --watch input.scss:output.css --style compact</span><br><span class="line"></span><br><span class="line">//编译添加调试map</span><br><span class="line">sass --watch input.scss:output.css --sourcemap</span><br><span class="line"></span><br><span class="line">//选择编译格式并添加调试map</span><br><span class="line">sass --watch input.scss:output.css --style expanded --sourcemap</span><br><span class="line"></span><br><span class="line">//开启debug信息</span><br><span class="line">sass --watch input.scss:output.css --debug-info</span><br></pre></td></tr></table></figure></p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="xx-scss"><a href="#xx-scss" class="headerlink" title="xx.scss"></a>xx.scss</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//未编译样式</span><br><span class="line">.box &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">  height: 400px;</span><br><span class="line">  &amp;-title &#123;</span><br><span class="line">    height: 30px;</span><br><span class="line">    line-height: 30px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="nested-编译排版格式"><a href="#nested-编译排版格式" class="headerlink" title="nested 编译排版格式"></a>nested 编译排版格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*命令行内容*/</span><br><span class="line">sass style.scss:style.css --style nested</span><br><span class="line"></span><br><span class="line">/*编译过后样式*/</span><br><span class="line">.box &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">  height: 400px; &#125;</span><br><span class="line">  .box-title &#123;</span><br><span class="line">    height: 30px;</span><br><span class="line">    line-height: 30px; &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="expanded-编译排版格式"><a href="#expanded-编译排版格式" class="headerlink" title="expanded 编译排版格式"></a>expanded 编译排版格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*命令行内容*/</span><br><span class="line">sass style.scss:style.css --style expanded</span><br><span class="line"></span><br><span class="line">/*编译过后样式*/</span><br><span class="line">.box &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">  height: 400px;</span><br><span class="line">&#125;</span><br><span class="line">.box-title &#123;</span><br><span class="line">  height: 30px;</span><br><span class="line">  line-height: 30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="compact-编译排版格式"><a href="#compact-编译排版格式" class="headerlink" title="compact 编译排版格式"></a>compact 编译排版格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*命令行内容*/</span><br><span class="line">sass style.scss:style.css --style compact</span><br><span class="line"></span><br><span class="line">/*编译过后样式*/</span><br><span class="line">.box &#123; width: 300px; height: 400px; &#125;</span><br><span class="line">.box-title &#123; height: 30px; line-height: 30px; &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="compressed-编译排版格式"><a href="#compressed-编译排版格式" class="headerlink" title="compressed 编译排版格式"></a>compressed 编译排版格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*命令行内容*/</span><br><span class="line">sass style.scss:style.css --style compressed</span><br><span class="line"></span><br><span class="line">/*编译过后样式*/</span><br><span class="line">.box&#123;width:300px;height:400px&#125;.box-title&#123;height:30px;line-height:30px&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/autoTool/">autoTool</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-vueLogin" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/02/27/vueLogin/" class="article-date">
-  	<time datetime="2018-02-27T00:49:46.000Z" itemprop="datePublished">2018-02-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/27/vueLogin/">
-        vueLogin
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">loging(formName) &#123;</span><br><span class="line">      <span class="built_in">let</span> _this = this;</span><br><span class="line">      this.<span class="variable">$refs</span>[formName].validate(valid =&gt; &#123;</span><br><span class="line">        // 验证用户信息</span><br><span class="line">        <span class="built_in">let</span> url = doMain.base + LoginProtocal.signIn.rest;</span><br><span class="line">        <span class="built_in">let</span> data = LoginProtocal.signIn.request;</span><br><span class="line">            data.account = _this.ruleForm.state;</span><br><span class="line">            data.password = _this.ruleForm.psd;</span><br><span class="line">        this.<span class="variable">$api</span>.post(url,data)</span><br><span class="line">        .<span class="keyword">then</span>((res)=&gt;&#123;</span><br><span class="line">          <span class="keyword">if</span>(res.data.status == <span class="string">"OK"</span>)&#123;</span><br><span class="line"></span><br><span class="line">              _this.<span class="variable">$message</span>.success(&#123;message: <span class="string">'登录成功'</span>,duration: 1000&#125;);</span><br><span class="line">              _this.<span class="variable">$router</span>.push(&#123;path: <span class="string">'/homeMap'</span>&#125;)</span><br><span class="line">             </span><br><span class="line">              // 设置cookie              </span><br><span class="line">              cookie.setCookie(<span class="string">'user'</span>, res.data.result); </span><br><span class="line"></span><br><span class="line">              // 存储登录过得用户</span><br><span class="line">              <span class="built_in">let</span> <span class="built_in">exit</span> = <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">if</span>(_this.usersNum.length == 0)&#123;</span><br><span class="line">                <span class="keyword">if</span>(this.checked)&#123;</span><br><span class="line">                  _this.usersNum.push(&#123; value: _this.ruleForm.state,psd: _this.ruleForm.psd&#125;);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                  _this.usersNum.push(&#123; value: _this.ruleForm.state,psd: <span class="string">''</span>&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i &lt; _this.usersNum.length; i++)&#123;</span><br><span class="line">                  <span class="keyword">if</span>(_this.usersNum[i].value == _this.ruleForm.state)&#123;</span><br><span class="line">                    _this.usersNum.splice(i,1);</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(this.checked)&#123;</span><br><span class="line">                  _this.usersNum.push(&#123; value: _this.ruleForm.state,psd: _this.ruleForm.psd&#125;);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                  _this.usersNum.push(&#123; value: _this.ruleForm.state,psd: <span class="string">''</span>&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">              localStorage.setItem(<span class="string">'users'</span>,JSON.stringify(_this.usersNum));</span><br><span class="line">                           </span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">             _this.<span class="variable">$message</span>.error(res.data.message)</span><br><span class="line">          &#125;        </span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">loginIn</span></span>()&#123;</span><br><span class="line">        this.loging(<span class="string">'ruleForm'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    querySearch(queryString, cb) &#123;</span><br><span class="line">      var restaurants = this.usersNum;</span><br><span class="line">      var results = queryString</span><br><span class="line">        ? restaurants.filter(this.createFilter(queryString))</span><br><span class="line">        : restaurants;</span><br><span class="line">      // 调用 callback 返回建议列表的数据</span><br><span class="line">      cb(results);</span><br><span class="line">    &#125;,</span><br><span class="line">    createFilter(queryString) &#123;</span><br><span class="line">      <span class="built_in">return</span> restaurant =&gt; &#123;</span><br><span class="line">        <span class="built_in">return</span> (</span><br><span class="line">          restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) ===</span><br><span class="line">          0</span><br><span class="line">        );</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 获取登录过得用户</span><br><span class="line">    <span class="function"><span class="title">loadAll</span></span>() &#123;</span><br><span class="line">      <span class="keyword">if</span> (localStorage.users) &#123;</span><br><span class="line">        this.usersNum = JSON.parse(localStorage.users);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    handleSelect(item) &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">toApi</span></span>()&#123;</span><br><span class="line">      window.location.href = <span class="string">'../../../static/apidoc.html'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">created</span></span>() &#123;</span><br><span class="line">    this.loadAll();</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">mounted</span></span>() &#123;&#125;,</span><br><span class="line">  computed:&#123;</span><br><span class="line">    <span class="function"><span class="title">state</span></span>()&#123;</span><br><span class="line">      <span class="built_in">return</span> this.ruleForm.state;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    state(newValue, oldValue) &#123;</span><br><span class="line">      this.checked = <span class="literal">false</span>;</span><br><span class="line">      <span class="built_in">let</span> user = JSON.parse(localStorage.getItem(<span class="string">'users'</span>)) || [];</span><br><span class="line">      user.forEach((item)=&gt;&#123;</span><br><span class="line">        console.log(item,newValue)</span><br><span class="line">        <span class="keyword">if</span>(item.value == newValue)&#123;</span><br><span class="line">          <span class="keyword">if</span>(item.psd == <span class="string">''</span>)&#123;</span><br><span class="line">            this.checked = <span class="literal">false</span>;</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            this.ruleForm.psd = item.psd;</span><br><span class="line">            this.checked = <span class="literal">true</span>;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/code/">code</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Electronic-Business" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/02/26/Electronic-Business/" class="article-date">
-  	<time datetime="2018-02-26T10:51:48.000Z" itemprop="datePublished">2018-02-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/26/Electronic-Business/">
-        Electronic Business
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="订单系统"><a href="#订单系统" class="headerlink" title="订单系统"></a>订单系统</h2><h3 id="订单主要信息"><a href="#订单主要信息" class="headerlink" title="订单主要信息"></a>订单主要信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1、支付信息</span><br><span class="line">	涉及支付的字段信息主要包括支付方式、支付金额、订单金额、优惠金额等</span><br><span class="line">2、促销信息</span><br><span class="line">	涉及促销的字段信息主要包括优惠方式、优惠面额、折扣等</span><br><span class="line">3、商品信息</span><br><span class="line">	涉及商品的字段信息主要包括商品名称、单价、数量、所属店铺等</span><br><span class="line">4、时间信息</span><br><span class="line">	涉及订单流转中各个时间戳的字段主要包括下单时间、支付时间、发货时间、完成时间等</span><br><span class="line">5、状态信息</span><br><span class="line">	涉及订单流转中状态的变更的字段主要包括订单状态、物流状态、退款状态</span><br><span class="line">6、用户信息</span><br><span class="line">	涉及用户信息字段主要包括姓名、注册手机号、收件人等</span><br><span class="line">7、配送信息</span><br><span class="line">	涉及配送信息的字段主要包括配送方式、物流单号等</span><br></pre></td></tr></table></figure>
-<h3 id="订单管理体系"><a href="#订单管理体系" class="headerlink" title="订单管理体系"></a>订单管理体系</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1、用户层</span><br><span class="line">	订单列表、订单详情、退款详情</span><br><span class="line">2、支付层</span><br><span class="line">	支付信息、下单信息</span><br><span class="line">3、订单系统</span><br><span class="line">	订单生产、订单审核、订单取消、订单移库、全额计算</span><br><span class="line">4、仓储系统</span><br><span class="line">	出库、分拣、配送、分单</span><br><span class="line">5、底层模块</span><br><span class="line">	商品、支付、用户、营销、订单、消息</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/电商/">电商</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-expressWeb" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/02/26/expressWeb/" class="article-date">
-  	<time datetime="2018-02-26T06:25:03.000Z" itemprop="datePublished">2018-02-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/26/expressWeb/">
-        expressWeb
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>学习express搭建单应用服务器</p>
-<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、git</span><br><span class="line">2、nodejs</span><br><span class="line">3、express</span><br><span class="line">4、supervisor</span><br></pre></td></tr></table></figure>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、新建文件夹web,进入文件夹并右键选择Git Bash Here</span><br><span class="line">2、键入npm init初始化文件夹</span><br><span class="line">3、安装依赖 npm i</span><br><span class="line">4、安装npm i express --save</span><br><span class="line">5、创建app.js文件</span><br></pre></td></tr></table></figure>
-<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><h3 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">var router = require(<span class="string">'./client/router/router'</span>)</span><br><span class="line">//**********************************************1</span><br><span class="line">// 引入express</span><br><span class="line">var express = require(<span class="string">'express'</span>);</span><br><span class="line">// 创建express对象</span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">//**********************************************3</span><br><span class="line">// 使用静态文件(/<span class="built_in">test</span>只是一个虚拟的路径，代替./client/<span class="built_in">test</span>)</span><br><span class="line">app.use(express.static(__dirname + <span class="string">'/client/test'</span>))</span><br><span class="line"></span><br><span class="line">//**********************************************4</span><br><span class="line">app.all(<span class="string">'*'</span>, <span class="keyword">function</span>(req, res, next) &#123;</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Content-Type,Content-Length, Authorization, Accept,X-Requested-With"</span>);</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</span><br><span class="line">    res.header(<span class="string">"X-Powered-By"</span>,<span class="string">' 3.2.1'</span>)</span><br><span class="line">    res.header(<span class="string">"Content-Type"</span>, <span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">    <span class="keyword">if</span>(req.method==<span class="string">"OPTIONS"</span>) res.send(200);/*让options请求快速返回*/</span><br><span class="line">    <span class="keyword">else</span>  next();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router(app)</span><br><span class="line"></span><br><span class="line">app.all(<span class="string">'*'</span>, <span class="keyword">function</span>(req, res, next) &#123;</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Content-Type,Content-Length, Authorization, Accept,X-Requested-With"</span>);</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</span><br><span class="line">    res.header(<span class="string">"X-Powered-By"</span>,<span class="string">' 3.2.1'</span>)</span><br><span class="line">    res.header(<span class="string">"Content-Type"</span>, <span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">    <span class="keyword">if</span>(req.method==<span class="string">"OPTIONS"</span>) res.send(200);/*让options请求快速返回*/</span><br><span class="line">    <span class="keyword">else</span>  next();</span><br><span class="line">&#125;);</span><br><span class="line">//**********************************************2</span><br><span class="line">// 创建服务启动端口</span><br><span class="line">var server = app.listen(3333, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">//   var host = server.address().address;</span><br><span class="line">//   var port = server.address().port;</span><br><span class="line">  console.log(<span class="string">'服务器运行在3333端口'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="router-js"><a href="#router-js" class="headerlink" title="router.js"></a>router.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">module.exports = <span class="keyword">function</span> (app) &#123;</span><br><span class="line">  app.get(<span class="string">'/init'</span>,(req,res)=&gt;&#123;</span><br><span class="line">    console.log(123456879)</span><br><span class="line">    res.send(&#123;data: 123&#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在git中键入supervisor app/app.js启动服务器</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-creatBlog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/02/26/creatBlog/" class="article-date">
-  	<time datetime="2018-02-26T03:13:02.000Z" itemprop="datePublished">2018-02-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/26/creatBlog/">
-        creatBlog
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>学习hexo+github搭建个人博客</p>
-<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、git版本管理工具</span><br><span class="line">2、nodejs运行环境</span><br><span class="line">3、hexo简洁而高效的博客框架</span><br><span class="line">4、github账号</span><br></pre></td></tr></table></figure>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="创建github账号"><a href="#创建github账号" class="headerlink" title="创建github账号"></a>创建github账号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、没有账号自己可以  </span><br><span class="line">  [whh](http://github.com)账号</span><br><span class="line">2、创建博客项目格式如：第一处填programName  +  第二处填programName.github.io</span><br></pre></td></tr></table></figure>
-<h3 id="配置秘钥"><a href="#配置秘钥" class="headerlink" title="配置秘钥"></a>配置秘钥</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、右键桌面，选择Git Bash Here，打开git</span><br><span class="line">2、键入<span class="built_in">cd</span> ~/.ssh，进入.shh目录</span><br><span class="line">3、键入ssh-keygen -t rsa -C “your_email@youremail.com”</span><br><span class="line">4、进入C:\Users\‘电脑名称’\.shh,打开xx.pub文件，拷贝内容</span><br><span class="line">5、将拷贝的秘钥添加到账号</span><br></pre></td></tr></table></figure>
-<h3 id="创建博客源文件"><a href="#创建博客源文件" class="headerlink" title="创建博客源文件"></a>创建博客源文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1、右键桌面，选择Git Bash Here，打开git</span><br><span class="line">2、键入npm install hexo-cli -g安装hexo运行环境</span><br><span class="line">3、hexo init初始化源文件</span><br><span class="line">4、进入源文件夹，修改跟目录的_config.yml</span><br><span class="line">	deploy:</span><br><span class="line">		<span class="built_in">type</span>: git</span><br><span class="line">		repo: git@github.com:programName/programName.github.io.git</span><br><span class="line">		branch: master</span><br></pre></td></tr></table></figure>
-<h3 id="运行与上传博客文件"><a href="#运行与上传博客文件" class="headerlink" title="运行与上传博客文件"></a>运行与上传博客文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、在跟目录下邮件空白处，选择Git Base Here,打开git</span><br><span class="line">2、键入hexo clean(清除上一次的文件，初次可以不用)</span><br><span class="line">3、键入hexo g 生成文件</span><br><span class="line">4、键入hexo s 在本地浏览（localhost:4000）</span><br><span class="line">5、安装npm install hexo-deployer-git --save</span><br><span class="line">6、键入hexo d上传文件到远程仓库(输入信息)</span><br><span class="line">7、在浏览器搜索栏键入https://programName.github.io/</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/autoTool/">autoTool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 	</div>
 
       
@@ -660,7 +798,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
