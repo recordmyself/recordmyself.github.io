@@ -226,70 +226,6 @@
 
 
   
-    <article id="post-web-初识webpack" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/08/web-初识webpack/" class="article-date">
-  	<time datetime="2018-03-08T01:17:07.000Z" itemprop="datePublished">2018-03-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/08/web-初识webpack/">
-        初识webpack
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是webpack"><a href="#什么是webpack" class="headerlink" title="什么是webpack"></a>什么是webpack</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WebPack可以看做是模块打包机：分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其转换和打包为合适的格式供浏览器使用</span><br><span class="line">Webpack的处理速度更快更直接，能打包更多不同类型的文件</span><br></pre></td></tr></table></figure>
-<h2 id="webpck工作方式"><a href="#webpck工作方式" class="headerlink" title="webpck工作方式"></a>webpck工作方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，</span><br><span class="line">使用loaders处理它们，最后打包为一个（或多个）浏览器可识别的JavaScript文件</span><br></pre></td></tr></table></figure>
-<h2 id="webpack使用"><a href="#webpack使用" class="headerlink" title="webpack使用"></a>webpack使用</h2><p>指定入口文件后，webpack将自动识别项目所依赖的其它文件</p>
-<h3 id="全局安装使用"><a href="#全局安装使用" class="headerlink" title="全局安装使用"></a>全局安装使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack &#123;entry file&#125; &#123; destination <span class="keyword">for</span> bundle file&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="局部安装使用"><a href="#局部安装使用" class="headerlink" title="局部安装使用"></a>局部安装使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_moudles/.bin/webpack &#123;entry file&#125; &#123; destination <span class="keyword">for</span> bundle file&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="DOME"><a href="#DOME" class="headerlink" title="DOME"></a>DOME</h3><p>在当前根目录下创建webpack.config.js,并初始配置;之后便可直接在终端输入webpack即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">moudle.export = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	entry: __dirname + &#123;entry file&#125;</span><br><span class="line">	//入口配置：__dirname是node.js中的一个全局变量，它指向当前执行脚本所在的目录</span><br><span class="line">	output: &#123;</span><br><span class="line">		path: __dirname + &#123; destination folder&#125;,</span><br><span class="line">		name： <span class="string">'fileName'</span></span><br><span class="line">	&#125;</span><br><span class="line">	//打包输出配置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-web-入门webpack" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -337,6 +273,70 @@
 <h3 id="Hot-Module-Replacement"><a href="#Hot-Module-Replacement" class="headerlink" title="Hot Module Replacement"></a>Hot Module Replacement</h3><p>它允许你在修改组件代码后，自动刷新实时预览修改后的效果<br>1、配置项：在webpack配置文件中添加HMR插件;在Webpack Dev Server中添加“hot”参数<br>2、HMR是一个webpack插件，它让你能浏览器中实时观察模块修改后的效果，但是如果你想让它工作，需要对模块进行额外的配额<br>3、Bable中的react-transform-hrm插件可以在不对React模块进行额外的配置的前提下让HMR正常工作:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-plugin-react-transform react-transform-hmr</span><br></pre></td></tr></table></figure></p>
 <h3 id="babelrc配置"><a href="#babelrc配置" class="headerlink" title=".babelrc配置"></a>.babelrc配置</h3><p>Babel其实可以完全在 webpack.config.js 中进行配置，但是考虑到babel具有非常多的配置选项，在单一的webpack.config.js文件中进行配置往往使得这个文件显得太复杂，因此一些开发者支持把babel的配置选项放在一个单独的名为 “.babelrc” 的配置文件中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//.babelrc</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"presets"</span>: [<span class="string">"react"</span>, <span class="string">"env"</span>],</span><br><span class="line">	<span class="string">"env"</span>: &#123;</span><br><span class="line">	  elopment<span class="string">": &#123;</span></span><br><span class="line"><span class="string">		 "</span>plugins<span class="string">": [["</span>react-transform<span class="string">", &#123;</span></span><br><span class="line"><span class="string">			"</span>transforms<span class="string">": [&#123;</span></span><br><span class="line"><span class="string">			   "</span>transform<span class="string">": "</span>react-transform-hmr<span class="string">",         </span></span><br><span class="line"><span class="string">				"</span>imports<span class="string">": ["</span>react<span class="string">"],         </span></span><br><span class="line"><span class="string">				"</span>locals<span class="string">": ["</span>module<span class="string">"]</span></span><br><span class="line"><span class="string">			&#125;]</span></span><br><span class="line"><span class="string">		  &#125;]]</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">const webpack = require(<span class="string">'webpack'</span>);</span><br><span class="line">const HtmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    entry: __dirname + &#123;entry file&#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: __dirname + &#123;destination folder&#125;,</span><br><span class="line">        filename: &#123;fileName&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    devtool: <span class="string">'eval-source-map'</span>,</span><br><span class="line">	//便于编译后的调试</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: <span class="string">"./public"</span>, //本地服务器所加载的页面所在的目录</span><br><span class="line">        historyApiFallback: <span class="literal">true</span>, //不跳转</span><br><span class="line">        inline: <span class="literal">true</span> //实时刷新</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">test</span>: /(\.css|\.)$/,</span><br><span class="line">				user:&#123;</span><br><span class="line">					&#123;</span><br><span class="line">                        loader: <span class="string">"style-loader"</span></span><br><span class="line">                    &#125;, &#123;</span><br><span class="line">                        loader: <span class="string">"css-loader"</span></span><br><span class="line">						options: &#123;</span><br><span class="line">                            modules: <span class="literal">true</span>, // 指定启用css modules</span><br><span class="line">                            localIdentName: <span class="string">'[name]__[local]--[hash:base64:5]'</span> // 指定css的类名格式</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,&#123;</span><br><span class="line">                        loader: <span class="string">"postcss-loader"</span></span><br><span class="line">                    &#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				</span><br><span class="line">			&#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">test</span>: /(\.jsx|\.js)$/,</span><br><span class="line">                use: &#123;</span><br><span class="line">                    loader: <span class="string">"babel-loader"</span></span><br><span class="line">					option: &#123;</span><br><span class="line">						 presets: [</span><br><span class="line">                            <span class="string">"env"</span>,</span><br><span class="line">							<span class="string">"react"</span></span><br><span class="line">                        ]</span><br><span class="line">					&#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                exclude: /node_modules/</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">	plugins: [</span><br><span class="line">		new webpack.BannerPlugin(<span class="string">'版权所有，翻版必究'</span>)</span><br><span class="line">		new HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: __dirname + &#123;tempalte file&#125;//new 一个这个插件的实例，并传入相关的参数</span><br><span class="line">        &#125;)</span><br><span class="line">		new webpack.HotModuleReplacementPlugin() //热加载插件</span><br><span class="line">    ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-web-初识webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/08/web-初识webpack/" class="article-date">
+  	<time datetime="2018-03-08T01:17:07.000Z" itemprop="datePublished">2018-03-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/08/web-初识webpack/">
+        初识webpack
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是webpack"><a href="#什么是webpack" class="headerlink" title="什么是webpack"></a>什么是webpack</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WebPack可以看做是模块打包机：分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其转换和打包为合适的格式供浏览器使用</span><br><span class="line">Webpack的处理速度更快更直接，能打包更多不同类型的文件</span><br></pre></td></tr></table></figure>
+<h2 id="webpck工作方式"><a href="#webpck工作方式" class="headerlink" title="webpck工作方式"></a>webpck工作方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，</span><br><span class="line">使用loaders处理它们，最后打包为一个（或多个）浏览器可识别的JavaScript文件</span><br></pre></td></tr></table></figure>
+<h2 id="webpack使用"><a href="#webpack使用" class="headerlink" title="webpack使用"></a>webpack使用</h2><p>指定入口文件后，webpack将自动识别项目所依赖的其它文件</p>
+<h3 id="全局安装使用"><a href="#全局安装使用" class="headerlink" title="全局安装使用"></a>全局安装使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack &#123;entry file&#125; &#123; destination <span class="keyword">for</span> bundle file&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="局部安装使用"><a href="#局部安装使用" class="headerlink" title="局部安装使用"></a>局部安装使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_moudles/.bin/webpack &#123;entry file&#125; &#123; destination <span class="keyword">for</span> bundle file&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="DOME"><a href="#DOME" class="headerlink" title="DOME"></a>DOME</h3><p>在当前根目录下创建webpack.config.js,并初始配置;之后便可直接在终端输入webpack即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">moudle.export = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	entry: __dirname + &#123;entry file&#125;</span><br><span class="line">	//入口配置：__dirname是node.js中的一个全局变量，它指向当前执行脚本所在的目录</span><br><span class="line">	output: &#123;</span><br><span class="line">		path: __dirname + &#123; destination folder&#125;,</span><br><span class="line">		name： <span class="string">'fileName'</span></span><br><span class="line">	&#125;</span><br><span class="line">	//打包输出配置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
