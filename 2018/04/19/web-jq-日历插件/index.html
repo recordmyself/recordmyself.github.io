@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>web-jq-日历插件 | whh-blogs-record</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="calendar.js123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899">
+<meta name="keywords" content="jquery,插件,calendar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web-jq-日历插件">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/web-jq-日历插件/index.html">
+<meta property="og:site_name" content="whh-blogs-record">
+<meta property="og:description" content="calendar.js123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899">
+<meta property="og:updated_time" content="2018-06-06T23:28:02.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web-jq-日历插件">
+<meta name="twitter:description" content="calendar.js123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899">
+  
+    <link rel="alternative" href="/atom.xml" title="whh-blogs-record" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">whh</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/antd/" style="font-size: 10px;">antd</a> <a href="/tags/autoTool/" style="font-size: 13.33px;">autoTool</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/code/" style="font-size: 13.33px;">code</a> <a href="/tags/javaScript/" style="font-size: 16.67px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 13.33px;">jquery</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/react/" style="font-size: 16.67px;">react</a> <a href="/tags/ug/" style="font-size: 10px;">ug</a> <a href="/tags/web/" style="font-size: 20px;">web</a> <a href="/tags/webpack/" style="font-size: 13.33px;">webpack</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/基础知识/" style="font-size: 13.33px;">基础知识</a> <a href="/tags/小技巧/" style="font-size: 10px;">小技巧</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">whh</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">whh</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-web-jq-日历插件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/19/web-jq-日历插件/" class="article-date">
+  	<time datetime="2018-04-19T09:36:42.000Z" itemprop="datePublished">2018-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      web-jq-日历插件
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/calendar/">calendar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="calendar-js"><a href="#calendar-js" class="headerlink" title="calendar.js"></a>calendar.js</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> Schedule1(undefined) &#123;</span><br><span class="line">	var _global;</span><br><span class="line">	//工具函数</span><br><span class="line">	//配置合并</span><br><span class="line">	<span class="keyword">function</span> extend (def,opt,override) &#123;</span><br><span class="line">		<span class="keyword">for</span>(var k <span class="keyword">in</span> opt)&#123;</span><br><span class="line">			<span class="keyword">if</span>(opt.hasOwnProperty(k) &amp;&amp; (!def.hasOwnProperty(k) || override))&#123;</span><br><span class="line">				def[k] = opt[k]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">return</span> def;</span><br><span class="line">	&#125;</span><br><span class="line">	//日期格式化</span><br><span class="line">	<span class="keyword">function</span> formartDate (y,m,d,symbol) &#123;</span><br><span class="line">		symbol = symbol || <span class="string">'-'</span>;</span><br><span class="line">		m = (m.toString())[1] ? m : <span class="string">'0'</span>+m;</span><br><span class="line">		d = (d.toString())[1] ? d : <span class="string">'0'</span>+d;</span><br><span class="line">		<span class="built_in">return</span> y+symbol+m+symbol+d</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">function</span> Schedule (opt) &#123;</span><br><span class="line">		var def = &#123;&#125;,</span><br><span class="line">			opt = extend(def,opt,<span class="literal">true</span>),</span><br><span class="line">			curDate = opt.date ? new Date(opt.date) : new Date(),</span><br><span class="line">			year = curDate.getFullYear(),</span><br><span class="line">			month = curDate.getMonth(),</span><br><span class="line">			day = curDate.getDate(),</span><br><span class="line">			currentYear = curDate.getFullYear(),</span><br><span class="line">			currentMonth = curDate.getMonth(),</span><br><span class="line">			currentDay = curDate.getDate(),</span><br><span class="line">			selectedDate = <span class="string">''</span>,</span><br><span class="line">			el = document.querySelector(opt.el) || document.querySelector(<span class="string">'body'</span>),</span><br><span class="line">			_this = this;</span><br><span class="line">		var bindEvent = <span class="function"><span class="title">function</span></span> ()&#123;</span><br><span class="line">			el.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">				switch (e.target.id) &#123;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'nextMonth'</span>:</span><br><span class="line">						nextMonthFun();</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'nextYear'</span>:</span><br><span class="line">						nextYearFun();</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'prevMonth'</span>:</span><br><span class="line">						prevMonthFun();</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'prevYear'</span>:</span><br><span class="line">						prevYearFun();</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					default:</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">				&#125;;</span><br><span class="line">				<span class="keyword">if</span>(e.target.className.indexOf(<span class="string">'currentDate'</span>) &gt; -1)&#123;</span><br><span class="line">					opt.clickCb &amp;&amp; opt.clickCb(year, month+1, e.target.innerHTML);</span><br><span class="line">					selectedDate = e.target.title;</span><br><span class="line">					day = e.target.innerHTML;</span><br><span class="line">					render();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,<span class="literal">false</span>)</span><br><span class="line">		&#125;</span><br><span class="line">		var init = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			var scheduleHd = <span class="string">'&lt;div class="schedule-hd"&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;div&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;span class="arrow icon iconfont icon-116leftarrowheads" id="prevYear" &gt;&lt;/span&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;span class="arrow icon iconfont icon-112leftarrowhead" id="prevMonth"&gt;&lt;/span&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;/div&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;div class="today"&gt;'</span>+formartDate(year,month+1,day,<span class="string">'-'</span>)+<span class="string">'&lt;/div&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;div&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;span class="arrow icon iconfont icon-111arrowheadright" id="nextMonth"&gt;&lt;/span&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;span class="arrow icon iconfont icon-115rightarrowheads" id="nextYear"&gt;&lt;/span&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;/div&gt;'</span>+</span><br><span class="line">							<span class="string">'&lt;/div&gt;'</span></span><br><span class="line">			var scheduleWeek = <span class="string">'&lt;ul class="week-ul ul-box"&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;日&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;一&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;二&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;三&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;四&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;五&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;六&lt;/li&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;/ul&gt;'</span></span><br><span class="line">			var scheduleBd = <span class="string">'&lt;ul class="schedule-bd ul-box" &gt;&lt;/ul&gt;'</span>;</span><br><span class="line">			el.innerHTML = scheduleHd + scheduleWeek + scheduleBd;</span><br><span class="line">			bindEvent();</span><br><span class="line">			render();</span><br><span class="line">		&#125;</span><br><span class="line">		var render = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			var fullDay = new Date(year,month+1,0).getDate(), //当月总天数</span><br><span class="line">				startWeek = new Date(year,month,1).getDay(), //当月第一天是周几</span><br><span class="line">				total = (fullDay+startWeek)%7 == 0 ? (fullDay+startWeek) : fullDay+startWeek+(7-(fullDay+startWeek)%7),//元素总个数</span><br><span class="line">				lastMonthDay = new Date(year,month,0).getDate(), //上月最后一天</span><br><span class="line">				eleTemp = [];</span><br><span class="line">			<span class="keyword">for</span>(var i = 0; i &lt; total; i++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(i&lt;startWeek)&#123;</span><br><span class="line">					eleTemp.push(<span class="string">'&lt;li class="other-month"&gt;&lt;span class="dayStyle"&gt;'</span>+(lastMonthDay-startWeek+1+i)+<span class="string">'&lt;/span&gt;&lt;/li&gt;'</span>)</span><br><span class="line">				&#125;<span class="keyword">else</span> <span class="keyword">if</span>(i&lt;(startWeek+fullDay))&#123;</span><br><span class="line">					var nowDate = formartDate(year,month+1,(i+1-startWeek),<span class="string">'-'</span>);</span><br><span class="line">					var addClass = <span class="string">''</span>;</span><br><span class="line">					selectedDate == nowDate &amp;&amp; (addClass = <span class="string">'selected-style'</span>);</span><br><span class="line">					formartDate(currentYear,currentMonth+1,currentDay,<span class="string">'-'</span>) == nowDate &amp;&amp; (addClass = <span class="string">'today-flag'</span>);</span><br><span class="line">					eleTemp.push(<span class="string">'&lt;li class="current-month" &gt;&lt;span title='</span>+nowDate+<span class="string">' class="currentDate dayStyle '</span>+addClass+<span class="string">'"&gt;'</span>+(i+1-startWeek)+<span class="string">'&lt;/span&gt;&lt;/li&gt;'</span>)</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					eleTemp.push(<span class="string">'&lt;li class="other-month"&gt;&lt;span class="dayStyle"&gt;'</span>+(i+1-(startWeek+fullDay))+<span class="string">'&lt;/span&gt;&lt;/li&gt;'</span>)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			el.querySelector(<span class="string">'.schedule-bd'</span>).innerHTML = eleTemp.join(<span class="string">''</span>);</span><br><span class="line">			el.querySelector(<span class="string">'.today'</span>).innerHTML = formartDate(year,month+1,day,<span class="string">'-'</span>);</span><br><span class="line">		&#125;;</span><br><span class="line">		var nextMonthFun = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			<span class="keyword">if</span>(month+1 &gt; 11)&#123;</span><br><span class="line">				year += 1;</span><br><span class="line">				month = 0;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				month += 1;</span><br><span class="line">			&#125;</span><br><span class="line">			render();</span><br><span class="line">			opt.nextMonthCb &amp;&amp; opt.nextMonthCb(year,month+1,day);</span><br><span class="line">		&#125;;</span><br><span class="line">		var nextYearFun = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			year += 1;</span><br><span class="line">			render();</span><br><span class="line">			opt.nextYeayCb &amp;&amp; opt.nextYeayCb(year,month+1,day);</span><br><span class="line">		&#125;;</span><br><span class="line">		var prevMonthFun = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			<span class="keyword">if</span>(month-1 &lt; 0)&#123;</span><br><span class="line">				year -= 1;</span><br><span class="line">				month = 11;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				month -= 1;</span><br><span class="line">			&#125;</span><br><span class="line">			render();</span><br><span class="line">			opt.prevMonthCb &amp;&amp; opt.prevMonthCb(year,month+1,day);</span><br><span class="line">		&#125;;</span><br><span class="line">		var prevYearFun = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			year -= 1;</span><br><span class="line">			render();</span><br><span class="line">			opt.prevYearCb &amp;&amp; opt.prevYearCb(year,month+1,day);</span><br><span class="line">		&#125;</span><br><span class="line">		init();</span><br><span class="line">	&#125;</span><br><span class="line">	//将插件暴露给全局对象</span><br><span class="line">	_global = (<span class="function"><span class="title">function</span></span>()&#123;<span class="built_in">return</span> this || (0,<span class="built_in">eval</span>)(<span class="string">'this'</span>)&#125;());</span><br><span class="line">	<span class="keyword">if</span>(typeof module !== <span class="string">'undefined'</span> &amp;&amp; module.exports)&#123;</span><br><span class="line">		module.exports = Schedule;</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (typeof define === <span class="string">"function"</span> &amp;&amp; define.amd)&#123;</span><br><span class="line">		define(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			<span class="built_in">return</span> Schedule;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		!(<span class="string">'Schedule'</span> <span class="keyword">in</span> _global) &amp;&amp; (_global.Schedule = Schedule);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> mySchedule2(ele,cb) &#123;</span><br><span class="line">    var mySc = new Schedule(&#123;</span><br><span class="line">    el: ele, //指定包裹元素（可选）</span><br><span class="line">    // date: <span class="string">'2018-9-20'</span>, //生成指定日期日历（可选）</span><br><span class="line">    clickCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击日期回调（可选）</span><br><span class="line">      cb(y,m,d)</span><br><span class="line">    &#125;,</span><br><span class="line">    nextMonthCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击下个月回调（可选）</span><br><span class="line">    &#125;,</span><br><span class="line">    nextYeayCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击下一年回调（可选）</span><br><span class="line">    &#125;,</span><br><span class="line">    prevMonthCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击上个月回调（可选）</span><br><span class="line">    &#125;,</span><br><span class="line">    prevYearCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击上一年月回调（可选）</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">return</span> mySc</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">export</span> default mySchedule2;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/21/web兼容性问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          web兼容性问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/16/python-基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python-基础</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="web-jq-日历插件" data-title="web-jq-日历插件" data-url="http://yoursite.com/2018/04/19/web-jq-日历插件/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="web-jq-日历插件">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2018 whh
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

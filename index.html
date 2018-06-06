@@ -106,7 +106,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/antd/" style="font-size: 10px;">antd</a> <a href="/tags/autoTool/" style="font-size: 13.33px;">autoTool</a> <a href="/tags/code/" style="font-size: 13.33px;">code</a> <a href="/tags/javaScript/" style="font-size: 16.67px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/react/" style="font-size: 16.67px;">react</a> <a href="/tags/ug/" style="font-size: 10px;">ug</a> <a href="/tags/web/" style="font-size: 20px;">web</a> <a href="/tags/webpack/" style="font-size: 13.33px;">webpack</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/小技巧/" style="font-size: 10px;">小技巧</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/antd/" style="font-size: 10px;">antd</a> <a href="/tags/autoTool/" style="font-size: 13.33px;">autoTool</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/code/" style="font-size: 13.33px;">code</a> <a href="/tags/javaScript/" style="font-size: 16.67px;">javaScript</a> <a href="/tags/jquery/" style="font-size: 13.33px;">jquery</a> <a href="/tags/program/" style="font-size: 10px;">program</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/react/" style="font-size: 16.67px;">react</a> <a href="/tags/ug/" style="font-size: 10px;">ug</a> <a href="/tags/web/" style="font-size: 20px;">web</a> <a href="/tags/webpack/" style="font-size: 13.33px;">webpack</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/基础知识/" style="font-size: 13.33px;">基础知识</a> <a href="/tags/小技巧/" style="font-size: 10px;">小技巧</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/电商/" style="font-size: 10px;">电商</a>
 					</div>
 				</section>
 				
@@ -162,6 +162,246 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-web兼容性问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/21/web兼容性问题/" class="article-date">
+  	<time datetime="2018-04-21T03:43:37.000Z" itemprop="datePublished">2018-04-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/21/web兼容性问题/">
+        web兼容性问题
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><h2 id="react"><a href="#react" class="headerlink" title="react"></a>react</h2><p>通用引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;addEventListener-polyfill.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>1、IE11:对象不支持startsWith<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1）startWith是用于判断当前字符串是否以anotherString作为开头，与它对应的是endsWith,用于判断是否以某字符串作为结尾</span><br><span class="line">2）发现startWith是2015年语言规范里更新的，在规范里强调浏览器应该自带这个方法，之后chrome 在下个发行版本里就加上了，但是2015年之前的chrom版本就没有，而ie始终不支持</span><br><span class="line">```			</span><br><span class="line">2、引入core-js 可以解决这个问题(polyfill)</span><br></pre></td></tr></table></figure></p>
+<p>1）corejs是js的模块化和标准化库，它为ECMAScript 5，ECMAScript 6：promises, symbols, collections, iterators, typed arrays及ECMAScript 7的等等提供了polyfills<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">&lt;script src=&apos;https://cdn.bootcss.com/core-js/2.5.5/core.min.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&apos;https://cdn.bootcss.com/core-js/2.5.5/core.js&apos;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2、</p>
+<h2 id="angular"><a href="#angular" class="headerlink" title="angular"></a>angular</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-web-jq-日历插件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/19/web-jq-日历插件/" class="article-date">
+  	<time datetime="2018-04-19T09:36:42.000Z" itemprop="datePublished">2018-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/19/web-jq-日历插件/">
+        web-jq-日历插件
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="calendar-js"><a href="#calendar-js" class="headerlink" title="calendar.js"></a>calendar.js</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> Schedule1(undefined) &#123;</span><br><span class="line">	var _global;</span><br><span class="line">	//工具函数</span><br><span class="line">	//配置合并</span><br><span class="line">	<span class="keyword">function</span> extend (def,opt,override) &#123;</span><br><span class="line">		<span class="keyword">for</span>(var k <span class="keyword">in</span> opt)&#123;</span><br><span class="line">			<span class="keyword">if</span>(opt.hasOwnProperty(k) &amp;&amp; (!def.hasOwnProperty(k) || override))&#123;</span><br><span class="line">				def[k] = opt[k]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">return</span> def;</span><br><span class="line">	&#125;</span><br><span class="line">	//日期格式化</span><br><span class="line">	<span class="keyword">function</span> formartDate (y,m,d,symbol) &#123;</span><br><span class="line">		symbol = symbol || <span class="string">'-'</span>;</span><br><span class="line">		m = (m.toString())[1] ? m : <span class="string">'0'</span>+m;</span><br><span class="line">		d = (d.toString())[1] ? d : <span class="string">'0'</span>+d;</span><br><span class="line">		<span class="built_in">return</span> y+symbol+m+symbol+d</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">function</span> Schedule (opt) &#123;</span><br><span class="line">		var def = &#123;&#125;,</span><br><span class="line">			opt = extend(def,opt,<span class="literal">true</span>),</span><br><span class="line">			curDate = opt.date ? new Date(opt.date) : new Date(),</span><br><span class="line">			year = curDate.getFullYear(),</span><br><span class="line">			month = curDate.getMonth(),</span><br><span class="line">			day = curDate.getDate(),</span><br><span class="line">			currentYear = curDate.getFullYear(),</span><br><span class="line">			currentMonth = curDate.getMonth(),</span><br><span class="line">			currentDay = curDate.getDate(),</span><br><span class="line">			selectedDate = <span class="string">''</span>,</span><br><span class="line">			el = document.querySelector(opt.el) || document.querySelector(<span class="string">'body'</span>),</span><br><span class="line">			_this = this;</span><br><span class="line">		var bindEvent = <span class="function"><span class="title">function</span></span> ()&#123;</span><br><span class="line">			el.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">				switch (e.target.id) &#123;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'nextMonth'</span>:</span><br><span class="line">						nextMonthFun();</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'nextYear'</span>:</span><br><span class="line">						nextYearFun();</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'prevMonth'</span>:</span><br><span class="line">						prevMonthFun();</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'prevYear'</span>:</span><br><span class="line">						prevYearFun();</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					default:</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">				&#125;;</span><br><span class="line">				<span class="keyword">if</span>(e.target.className.indexOf(<span class="string">'currentDate'</span>) &gt; -1)&#123;</span><br><span class="line">					opt.clickCb &amp;&amp; opt.clickCb(year, month+1, e.target.innerHTML);</span><br><span class="line">					selectedDate = e.target.title;</span><br><span class="line">					day = e.target.innerHTML;</span><br><span class="line">					render();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,<span class="literal">false</span>)</span><br><span class="line">		&#125;</span><br><span class="line">		var init = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			var scheduleHd = <span class="string">'&lt;div class="schedule-hd"&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;div&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;span class="arrow icon iconfont icon-116leftarrowheads" id="prevYear" &gt;&lt;/span&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;span class="arrow icon iconfont icon-112leftarrowhead" id="prevMonth"&gt;&lt;/span&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;/div&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;div class="today"&gt;'</span>+formartDate(year,month+1,day,<span class="string">'-'</span>)+<span class="string">'&lt;/div&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;div&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;span class="arrow icon iconfont icon-111arrowheadright" id="nextMonth"&gt;&lt;/span&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;span class="arrow icon iconfont icon-115rightarrowheads" id="nextYear"&gt;&lt;/span&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;/div&gt;'</span>+</span><br><span class="line">							<span class="string">'&lt;/div&gt;'</span></span><br><span class="line">			var scheduleWeek = <span class="string">'&lt;ul class="week-ul ul-box"&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;日&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;一&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;二&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;三&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;四&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;五&lt;/li&gt;'</span>+</span><br><span class="line">									<span class="string">'&lt;li&gt;六&lt;/li&gt;'</span>+</span><br><span class="line">								<span class="string">'&lt;/ul&gt;'</span></span><br><span class="line">			var scheduleBd = <span class="string">'&lt;ul class="schedule-bd ul-box" &gt;&lt;/ul&gt;'</span>;</span><br><span class="line">			el.innerHTML = scheduleHd + scheduleWeek + scheduleBd;</span><br><span class="line">			bindEvent();</span><br><span class="line">			render();</span><br><span class="line">		&#125;</span><br><span class="line">		var render = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			var fullDay = new Date(year,month+1,0).getDate(), //当月总天数</span><br><span class="line">				startWeek = new Date(year,month,1).getDay(), //当月第一天是周几</span><br><span class="line">				total = (fullDay+startWeek)%7 == 0 ? (fullDay+startWeek) : fullDay+startWeek+(7-(fullDay+startWeek)%7),//元素总个数</span><br><span class="line">				lastMonthDay = new Date(year,month,0).getDate(), //上月最后一天</span><br><span class="line">				eleTemp = [];</span><br><span class="line">			<span class="keyword">for</span>(var i = 0; i &lt; total; i++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(i&lt;startWeek)&#123;</span><br><span class="line">					eleTemp.push(<span class="string">'&lt;li class="other-month"&gt;&lt;span class="dayStyle"&gt;'</span>+(lastMonthDay-startWeek+1+i)+<span class="string">'&lt;/span&gt;&lt;/li&gt;'</span>)</span><br><span class="line">				&#125;<span class="keyword">else</span> <span class="keyword">if</span>(i&lt;(startWeek+fullDay))&#123;</span><br><span class="line">					var nowDate = formartDate(year,month+1,(i+1-startWeek),<span class="string">'-'</span>);</span><br><span class="line">					var addClass = <span class="string">''</span>;</span><br><span class="line">					selectedDate == nowDate &amp;&amp; (addClass = <span class="string">'selected-style'</span>);</span><br><span class="line">					formartDate(currentYear,currentMonth+1,currentDay,<span class="string">'-'</span>) == nowDate &amp;&amp; (addClass = <span class="string">'today-flag'</span>);</span><br><span class="line">					eleTemp.push(<span class="string">'&lt;li class="current-month" &gt;&lt;span title='</span>+nowDate+<span class="string">' class="currentDate dayStyle '</span>+addClass+<span class="string">'"&gt;'</span>+(i+1-startWeek)+<span class="string">'&lt;/span&gt;&lt;/li&gt;'</span>)</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					eleTemp.push(<span class="string">'&lt;li class="other-month"&gt;&lt;span class="dayStyle"&gt;'</span>+(i+1-(startWeek+fullDay))+<span class="string">'&lt;/span&gt;&lt;/li&gt;'</span>)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			el.querySelector(<span class="string">'.schedule-bd'</span>).innerHTML = eleTemp.join(<span class="string">''</span>);</span><br><span class="line">			el.querySelector(<span class="string">'.today'</span>).innerHTML = formartDate(year,month+1,day,<span class="string">'-'</span>);</span><br><span class="line">		&#125;;</span><br><span class="line">		var nextMonthFun = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			<span class="keyword">if</span>(month+1 &gt; 11)&#123;</span><br><span class="line">				year += 1;</span><br><span class="line">				month = 0;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				month += 1;</span><br><span class="line">			&#125;</span><br><span class="line">			render();</span><br><span class="line">			opt.nextMonthCb &amp;&amp; opt.nextMonthCb(year,month+1,day);</span><br><span class="line">		&#125;;</span><br><span class="line">		var nextYearFun = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			year += 1;</span><br><span class="line">			render();</span><br><span class="line">			opt.nextYeayCb &amp;&amp; opt.nextYeayCb(year,month+1,day);</span><br><span class="line">		&#125;;</span><br><span class="line">		var prevMonthFun = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			<span class="keyword">if</span>(month-1 &lt; 0)&#123;</span><br><span class="line">				year -= 1;</span><br><span class="line">				month = 11;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				month -= 1;</span><br><span class="line">			&#125;</span><br><span class="line">			render();</span><br><span class="line">			opt.prevMonthCb &amp;&amp; opt.prevMonthCb(year,month+1,day);</span><br><span class="line">		&#125;;</span><br><span class="line">		var prevYearFun = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			year -= 1;</span><br><span class="line">			render();</span><br><span class="line">			opt.prevYearCb &amp;&amp; opt.prevYearCb(year,month+1,day);</span><br><span class="line">		&#125;</span><br><span class="line">		init();</span><br><span class="line">	&#125;</span><br><span class="line">	//将插件暴露给全局对象</span><br><span class="line">	_global = (<span class="function"><span class="title">function</span></span>()&#123;<span class="built_in">return</span> this || (0,<span class="built_in">eval</span>)(<span class="string">'this'</span>)&#125;());</span><br><span class="line">	<span class="keyword">if</span>(typeof module !== <span class="string">'undefined'</span> &amp;&amp; module.exports)&#123;</span><br><span class="line">		module.exports = Schedule;</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (typeof define === <span class="string">"function"</span> &amp;&amp; define.amd)&#123;</span><br><span class="line">		define(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			<span class="built_in">return</span> Schedule;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		!(<span class="string">'Schedule'</span> <span class="keyword">in</span> _global) &amp;&amp; (_global.Schedule = Schedule);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> mySchedule2(ele,cb) &#123;</span><br><span class="line">    var mySc = new Schedule(&#123;</span><br><span class="line">    el: ele, //指定包裹元素（可选）</span><br><span class="line">    // date: <span class="string">'2018-9-20'</span>, //生成指定日期日历（可选）</span><br><span class="line">    clickCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击日期回调（可选）</span><br><span class="line">      cb(y,m,d)</span><br><span class="line">    &#125;,</span><br><span class="line">    nextMonthCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击下个月回调（可选）</span><br><span class="line">    &#125;,</span><br><span class="line">    nextYeayCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击下一年回调（可选）</span><br><span class="line">    &#125;,</span><br><span class="line">    prevMonthCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击上个月回调（可选）</span><br><span class="line">    &#125;,</span><br><span class="line">    prevYearCb: <span class="keyword">function</span>(y, m, d) &#123;</span><br><span class="line">        //点击上一年月回调（可选）</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">return</span> mySc</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">export</span> default mySchedule2;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/calendar/">calendar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-python-基础" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/16/python-基础/" class="article-date">
+  	<time datetime="2018-04-16T03:34:50.000Z" itemprop="datePublished">2018-04-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/16/python-基础/">
+        python-基础
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><p>1、大小写转换<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">'i loVe yOu'</span>;</span><br><span class="line">str.title(); // <span class="string">'I Love You'</span> 以首字母大写的形式展示每个单词</span><br><span class="line">str.upper(); // <span class="string">'I LOVE YOU'</span> 所有字母大写</span><br><span class="line">str.lower(); // <span class="string">'i love you'</span> 所有字母小写</span><br></pre></td></tr></table></figure></p>
+<p>2、制表符、换行符<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'这里是\\n\n\t\\t是这里'</span>); \用来转义、\n换行、\t缩进<span class="string">')</span></span><br></pre></td></tr></table></figure></p>
+<p>3、移除首尾空白<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str.rstrip();</span><br><span class="line"></span><br><span class="line">4、引号应该成对出现</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础知识/">基础知识</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-python-开发规范" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/16/python-开发规范/" class="article-date">
+  	<time datetime="2018-04-16T03:23:52.000Z" itemprop="datePublished">2018-04-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/16/python-开发规范/">
+        python-开发规范
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h2><p>1、可以使用数字、下划线、字母组合<br>2、只能以字母和下划线开始，且不能有空格<br>3、不要使用python关键字和函数名命名</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-web-前端开发规范" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -215,7 +455,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
 	</div>
 
       
@@ -265,7 +505,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="输入框"><a href="#输入框" class="headerlink" title="输入框"></a>输入框</h2><p>1、样式要统一<br>2、内容的验证<br>3、内容的最大长度<br>4、内容的类型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">//JS 控制不能输入特殊字符</span><br><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"domain"</span> onkeyup=<span class="string">"this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')"</span>；</span><br><span class="line"></span><br><span class="line">// JS 控制文本框只能输入数字</span><br><span class="line">&lt;input </span><br><span class="line">	onkeyup=<span class="string">"value=value.replace(/[^0-9]/g,'')"</span> </span><br><span class="line">	onpaste=<span class="string">"value=value.replace(/[^0-9]/g,'')"</span> </span><br><span class="line">	oncontextmenu = <span class="string">"value=value.replace(/[^0-9]/g,'')"</span>&gt;</span><br><span class="line">		</span><br><span class="line">//JS 控制文本框只能输入数字、小数点</span><br><span class="line">&lt;input </span><br><span class="line">	onkeyup=<span class="string">"value=value.replace(/[^\a-\z\A-\Z]/g,'')"</span> </span><br><span class="line">	onpaste=<span class="string">"value=value.replace(/[^\a-\z\A-\Z]/g,'')"</span> </span><br><span class="line">	oncontextmenu = <span class="string">"value=value.replace(/[^\a-\z\A-\Z]/g,'')"</span>&gt;	</span><br><span class="line">	</span><br><span class="line">//JS 控制文本框只能输入英文、数字</span><br><span class="line">&lt;input </span><br><span class="line">	onkeyup=<span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')"</span> </span><br><span class="line">	onpaste=<span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')"</span> </span><br><span class="line">	oncontextmenu = <span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')"</span>&gt;</span><br><span class="line">	</span><br><span class="line">//JS 控制文本框只能输入中文</span><br><span class="line">&lt;input </span><br><span class="line">	onkeyup=<span class="string">"value=value.replace(/[^\u4E00-\u9FA5]/g,'')"</span> </span><br><span class="line">	onpaste=<span class="string">"value=value.replace(/[^\u4E00-\u9FA5]/g,'')"</span> </span><br><span class="line">	oncontextmenu = <span class="string">"value=value.replace(/[^\u4E00-\u9FA5]/g,'')"</span>&gt;</span><br><span class="line">	</span><br><span class="line">//JS 控制文本框只能输入中文、英文、数字</span><br><span class="line">&lt;input </span><br><span class="line">	onkeyup=<span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')"</span> </span><br><span class="line">	onpaste=<span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')"</span> </span><br><span class="line">	oncontextmenu = <span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')"</span>&gt;</span><br><span class="line">	</span><br><span class="line">//JS 控制文本框只能输入中文、英文、数字、空格</span><br><span class="line">&lt;input </span><br><span class="line">	onkeyup=<span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\ ]/g,'')"</span> </span><br><span class="line">	onpaste=<span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\ ]/g,'')"</span> </span><br><span class="line">	oncontextmenu = <span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\ ]/g,'')"</span>&gt;</span><br><span class="line">	</span><br><span class="line">//JS 控制文本框只能输入中文、英文、数字、小数点</span><br><span class="line">&lt;input </span><br><span class="line">	onkeyup=<span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\.]/g,'')"</span> </span><br><span class="line">	onpaste=<span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\.]/g,'')"</span> </span><br><span class="line">	oncontextmenu = <span class="string">"value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\.]/g,'')"</span>&gt;</span><br><span class="line">	</span><br><span class="line">//输入特殊字符之后立即清除：</span><br><span class="line"><span class="keyword">function</span> cleanSpelChar(th)&#123;     </span><br><span class="line">	<span class="keyword">if</span>(/[<span class="string">"'&lt;&gt;%;)(&amp;+]/.test(th.value))&#123;           </span></span><br><span class="line"><span class="string">		<span class="variable">$(th)</span>.val(th.value.replace(/["</span><span class="string">'&lt;&gt;%;)(&amp;+]/,""));     </span></span><br><span class="line"><span class="string">	&#125; </span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">//禁止输入特殊字符</span></span><br><span class="line"><span class="string">function processSpelChar()&#123;     </span></span><br><span class="line"><span class="string">	var code;     </span></span><br><span class="line"><span class="string">	var character;    </span></span><br><span class="line"><span class="string">	if(document.all)&#123;         </span></span><br><span class="line"><span class="string">		code = window.event.keyCode;     </span></span><br><span class="line"><span class="string">	&#125;else&#123;         </span></span><br><span class="line"><span class="string">		code = arguments.callee.caller.arguments[0].which;    </span></span><br><span class="line"><span class="string">	&#125;     </span></span><br><span class="line"><span class="string">	var character = String.fromCharCode(code);     </span></span><br><span class="line"><span class="string">	var txt = new RegExp(/["'</span>&lt;&gt;%;)(&amp;+]/);    </span><br><span class="line">	<span class="keyword">if</span>(txt.test(character))&#123;         </span><br><span class="line">		<span class="keyword">if</span>(document.all)&#123;             </span><br><span class="line">			window.event.returnValue = <span class="literal">false</span>;       </span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;            </span><br><span class="line">			arguments.callee.caller.arguments[0].preventDefault();       </span><br><span class="line">		&#125;     </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="输入框"><a href="#输入框" class="headerlink" title="输入框"></a>输入框</h2><p>1、样式要统一<br>2、内容的验证<br>3、内容的最大长度<br>4、内容的类型</p>
 <h2 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h2><p>1、相同作用的样式要统一</p>
 
       
@@ -390,7 +630,8 @@
       
         <h2 id="获取标签"><a href="#获取标签" class="headerlink" title="获取标签"></a>获取标签</h2><h2 id="获取标签的宽高"><a href="#获取标签的宽高" class="headerlink" title="获取标签的宽高"></a>获取标签的宽高</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">window.innerHeight（innerWidth</span><br><span class="line">表示可见区域的高度（宽度），如果底部（右侧）有滚动条，会把底部（右侧）滚动条的高度（宽度）计算进去，</span><br><span class="line">此方法适用于标准浏览器及IE9+</span><br><span class="line"></span><br><span class="line">document.body.clientHeight/clientWidth</span><br><span class="line">表示可见区域的高度（宽度）, 不会把滚动条和边线的高度宽度计算进去，</span><br><span class="line">此方法适用于标准浏览器及低版本IE标准模式</span><br><span class="line"></span><br><span class="line">document.body.offsetHeight/offsetWidth</span><br><span class="line">表示整个文档的高度（宽度）, 会把滚动条和边线的高度宽度计算进去</span><br><span class="line"></span><br><span class="line">document.body.scrollWidth/scrollHeight; </span><br><span class="line">获得网页正文全文高和宽，包含边线宽度</span><br><span class="line"></span><br><span class="line">document.body.scrollTop/scrollLeft;</span><br><span class="line">浏览器窗口顶部与文档顶部之间的距离（浏览器窗口与文档左侧之间的距离），也就是滚动条滚动的距离 </span><br><span class="line"></span><br><span class="line">网页正文部分上/左：window.screenTop/window.screenLeft; </span><br><span class="line">屏幕分辨率的高：window.screen.height; </span><br><span class="line">屏幕分辨率的宽：window.screen.width; </span><br><span class="line">屏幕可用工作区高度：window.screen.availHeight; </span><br><span class="line">屏幕可用工作区宽度：window.screen.availWidth;</span><br><span class="line"></span><br><span class="line">window.getComputedStyle(ele).height</span><br><span class="line">window.getComputedStyle(ele).width</span><br></pre></td></tr></table></figure>
 <p>注：重排</p>
-<h2 id="js获取节点"><a href="#js获取节点" class="headerlink" title="js获取节点"></a>js获取节点</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> ele = document.getElementXX();</span><br><span class="line">获取父节点：<span class="built_in">let</span> parentNode = ele.parentNode;</span><br><span class="line">获取兄弟节点(上)： <span class="built_in">let</span> previousSbiling =  ele.previousSbiling;</span><br><span class="line">获取兄弟节点(下)： <span class="built_in">let</span> nextSbiling =  ele.nextSbiling;</span><br><span class="line">获取子节点：<span class="built_in">let</span> childNodes = ele.childNodes;</span><br><span class="line">第一个子节点：<span class="built_in">let</span> firstChild = ele.firstChild;</span><br><span class="line">第二个子节点：<span class="built_in">let</span> lastChild = ele.lastChild;</span><br></pre></td></tr></table></figure>
+<h2 id="获取节点"><a href="#获取节点" class="headerlink" title="获取节点"></a>获取节点</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> ele = document.getElementXX();</span><br><span class="line">获取父节点：<span class="built_in">let</span> parentNode = ele.parentNode;</span><br><span class="line">获取兄弟节点(上)： <span class="built_in">let</span> previousSbiling =  ele.previousSbiling;</span><br><span class="line">获取兄弟节点(下)： <span class="built_in">let</span> nextSbiling =  ele.nextSbiling;</span><br><span class="line">获取子节点：<span class="built_in">let</span> childNodes = ele.childNodes;</span><br><span class="line">第一个子节点：<span class="built_in">let</span> firstChild = ele.firstChild;</span><br><span class="line">第二个子节点：<span class="built_in">let</span> lastChild = ele.lastChild;</span><br></pre></td></tr></table></figure>
+<h2 id="获取自定义属性"><a href="#获取自定义属性" class="headerlink" title="获取自定义属性"></a>获取自定义属性</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> xx = ele.target.dataset.xx;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -522,285 +763,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小技巧/">小技巧</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-web-js拓展" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/04/03/web-js拓展/" class="article-date">
-  	<time datetime="2018-04-03T02:15:34.000Z" itemprop="datePublished">2018-04-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/03/web-js拓展/">
-        js拓展
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="两个数值交换"><a href="#两个数值交换" class="headerlink" title="两个数值交换"></a>两个数值交换</h2><p>1、通过临时变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> temp = a;</span><br><span class="line">a = b;</span><br><span class="line">b = temp</span><br></pre></td></tr></table></figure></p>
-<p>2、按位异或(二进制)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> a = 3, b = 5;</span><br><span class="line">//a = 011, b = 101</span><br><span class="line">a ^= b; // a = 110 6</span><br><span class="line">b ^= a; // b = 011 3</span><br><span class="line">a ^= b; // a = 101 5</span><br></pre></td></tr></table></figure></p>
-<p>3、数组赋值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> a = 3, b = 5;</span><br><span class="line">b = [a,a=b][0]</span><br><span class="line">或</span><br><span class="line">[a,b] = [b,a]</span><br></pre></td></tr></table></figure></p>
-<p>4、<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> a = 3, b = 5;</span><br><span class="line">a = a + b;</span><br><span class="line">b = a - b;</span><br><span class="line">a = a - b</span><br></pre></td></tr></table></figure></p>
-<h2 id="数组深赋值"><a href="#数组深赋值" class="headerlink" title="数组深赋值"></a>数组深赋值</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> arrayToArray(params)&#123;</span><br><span class="line">    var arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line">    var arr1 = JSON.parse(JSON.stringify(arr)) //深复制</span><br><span class="line">    var arr2 = arr.slice(0)  //深复制</span><br><span class="line">        arr3 = arr2;  //浅复制</span><br><span class="line">        arr2[1] = <span class="string">'d'</span></span><br><span class="line">    console.log(arr,arr1,arr2,arr3)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="随机产生16进制的颜色"><a href="#随机产生16进制的颜色" class="headerlink" title="随机产生16进制的颜色"></a>随机产生16进制的颜色</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">getRandomColor</span></span>() &#123;</span><br><span class="line">    <span class="built_in">let</span> color = <span class="string">'#'</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i &lt; 6;i ++ )&#123;</span><br><span class="line">        color += (Math.floor(Math.random()*16)).toString(16)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> color</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注：十进制转其他进制 x.toString(目标进制);其他转十进制parseInt(x, 对应进制);其他转其他（先转换十进制再转成其他的）</p>
-<h2 id="计算最大公约数（辗转相除法）"><a href="#计算最大公约数（辗转相除法）" class="headerlink" title="计算最大公约数（辗转相除法）"></a>计算最大公约数（辗转相除法）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> greatestCommonDivisor(max,min)&#123;</span><br><span class="line">	<span class="built_in">return</span> min == 0?max:greatestCommonDivisor(min,max%min)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [12,18,30] </span><br><span class="line"><span class="keyword">function</span> greatestCommonDivisor(arr) &#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">let</span> i = Math.min.apply(null,arr);i&gt;0;i--)&#123;</span><br><span class="line">        <span class="built_in">let</span> re = <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">let</span> j = 0;j &lt; arr.length;j ++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]%i != 0)&#123;</span><br><span class="line">                re = <span class="literal">false</span>;</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            re = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(re)&#123;</span><br><span class="line">            <span class="built_in">return</span> i</span><br><span class="line">        &#125;        </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="计算最小公倍数"><a href="#计算最小公倍数" class="headerlink" title="计算最小公倍数"></a>计算最小公倍数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">leastCommonMultiple</span></span>()&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> i = Math.max.apply(null,arr);i&gt;0;i++)&#123;</span><br><span class="line">        <span class="built_in">let</span> re = <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">let</span> j = 0;j &lt; arr.length;j ++)&#123;</span><br><span class="line">            <span class="keyword">if</span>( i%arr[j] != 0)&#123;</span><br><span class="line">                re = <span class="literal">false</span>;</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            re = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(re)&#123;</span><br><span class="line">            <span class="built_in">return</span> i</span><br><span class="line">        &#125;        </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="数字取整"><a href="#数字取整" class="headerlink" title="数字取整"></a>数字取整</h2><p>1、parseInt<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseInt(6.11)  // 5</span><br></pre></td></tr></table></figure></p>
-<p>2、位运算符<br>&amp; 按位与：对应为都为1，结果为1，否则为0（判断奇偶数）<br>| 按位或：对应位都为0，结果为0，否则为1（取整 3.1 | 0  //3）<br>^ 按位异或：对应位不同，结果为1，否则为零（同或等于异或取反或者对应位相同，结果为1，否则为0）<br>~ 按位取反：0变1,1变0（取整）<br>&lt;&lt;按位左移（2的n次方 2 &lt;&lt; 3  //8）;&gt;&gt;按位右移（取半50 &gt;&gt; 1 //25）<br><strong> （2</strong>3 //8）同按位左移，但2位不能为负数</p>
-<p>正数的原码 = 反码 = 补码<br>负数的反码 = ~原码; 补码 = 反码 + 1<br>*注：计算机中存储的都是补码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~5（十） = ~00000101（二、补） -&gt; ~00000101（二、原） = 11111010（二、原）-&gt; 10000101（二、反）-&gt; 10000110（二、补）= -6</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~~6.11 = 6</span><br><span class="line">6.11 | 0 = 6</span><br><span class="line">6.11 ^ 0 = 6</span><br></pre></td></tr></table></figure>
-<h2 id="判断是否为整数"><a href="#判断是否为整数" class="headerlink" title="判断是否为整数"></a>判断是否为整数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1、如上</span><br><span class="line"><span class="keyword">function</span> numIsInt(params) &#123;</span><br><span class="line">    try&#123;</span><br><span class="line">        <span class="keyword">if</span>(params ^ 0 === params &amp;&amp; params | 0 === params &amp;&amp; ~~params === params &amp;&amp; parseInt(params) === params &amp;&amp; params % 1 === 0)&#123;</span><br><span class="line">            consossle.log(<span class="string">'是整数'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">            conssole.log(<span class="string">'不是整数'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    catch(err)&#123;</span><br><span class="line">        var txt=<span class="string">""</span>;</span><br><span class="line">        txt=<span class="string">"There was an error on this page.\n\n"</span>;</span><br><span class="line">        txt+=<span class="string">"Error description: "</span> + err.message + <span class="string">"\n\n"</span>;</span><br><span class="line">        txt+=<span class="string">"Click OK to continue.\n\n"</span>;</span><br><span class="line">        console.log(txt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">2、Math库：</span><br><span class="line">Math.round(x): 四舍五入</span><br><span class="line">Math.floor(x): 向下取整</span><br><span class="line">Math.ceil(x): 向上取整</span><br><span class="line"><span class="keyword">function</span> numIsInt(params) &#123;</span><br><span class="line">    try&#123;</span><br><span class="line">        <span class="keyword">if</span>(Math.round(params) === params &amp;&amp; Math.floor(params) === params &amp;&amp; Math.ceil(params) === params)&#123;</span><br><span class="line">            consossle.log(<span class="string">'是整数'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">            conssole.log(<span class="string">'不是整数'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    catch(err)&#123;</span><br><span class="line">        var txt=<span class="string">""</span>;</span><br><span class="line">        txt=<span class="string">"There was an error on this page.\n\n"</span>;</span><br><span class="line">        txt+=<span class="string">"Error description: "</span> + err.message + <span class="string">"\n\n"</span>;</span><br><span class="line">        txt+=<span class="string">"Click OK to continue.\n\n"</span>;</span><br><span class="line">        console.log(txt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3、es6语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Number.isInteger(x)</span><br></pre></td></tr></table></figure></p>
-<h2 id="递归求阶乘"><a href="#递归求阶乘" class="headerlink" title="递归求阶乘"></a>递归求阶乘</h2><p>function recursiveAndFactorial(params){<br>    return params &gt; 1 ? params * recursiveAndFactorial(params-1):params<br>}</p>
-<h2 id="console"><a href="#console" class="headerlink" title="console"></a>console</h2><h3 id="console-log"><a href="#console-log" class="headerlink" title="console.log"></a>console.log</h3><p>可以使用 C 语言 printf() 风格的占位符，不过其支持的占位符种类较少，<br>只支持字符串（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;%d年%d月%d日&quot;, 2015, 09, 22);</span><br></pre></td></tr></table></figure></p>
-<h3 id="美化console-info"><a href="#美化console-info" class="headerlink" title="美化console.info"></a>美化console.info</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">console.info(<span class="string">"%cMessage"</span>, <span class="string">"color: #3190e8; font-size: 30px; font-family: sans-serif"</span>);</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### console.error/warning</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### console.table</span></span><br><span class="line">``` bash</span><br><span class="line">console.table(&#123;</span><br><span class="line">    <span class="string">"person1"</span>: &#123;<span class="string">"fname"</span>: <span class="string">"san"</span>, <span class="string">"lname"</span>: <span class="string">"zhang"</span>&#125;, </span><br><span class="line">    <span class="string">"person2"</span>: &#123;<span class="string">"fname"</span>: <span class="string">"si"</span>, <span class="string">"lname"</span>: <span class="string">"li"</span>&#125;, </span><br><span class="line">    <span class="string">"person3"</span>: &#123;<span class="string">"fname"</span>: <span class="string">"wu"</span>, <span class="string">"lname"</span>: <span class="string">"wang"</span>&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="输出时间间隔"><a href="#输出时间间隔" class="headerlink" title="输出时间间隔"></a>输出时间间隔</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.time(<span class="string">"for-test"</span>);</span><br><span class="line">const arr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">let</span> i = 0; i &lt; 100000; i++) &#123;</span><br><span class="line">    arr.push(&#123;<span class="string">"key"</span>: i&#125;);</span><br><span class="line">&#125;</span><br><span class="line">console.timeEnd(<span class="string">"for-test"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="console-assert"><a href="#console-assert" class="headerlink" title="console.assert()"></a>console.assert()</h3><p>类似于单元测试中的断言，当表达式为 false 时，输出错误信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3];</span><br><span class="line">console.assert(arr.length === 4);</span><br></pre></td></tr></table></figure></p>
-<h3 id="console-count"><a href="#console-count" class="headerlink" title="console.count"></a>console.count</h3><p>统计一段代码被执行了多少次</p>
-<h3 id="console-group-、-console-groupEnd-与-console-groupCollapsed"><a href="#console-group-、-console-groupEnd-与-console-groupCollapsed" class="headerlink" title="console.group()、 console.groupEnd() 与 console.groupCollapsed()"></a>console.group()、 console.groupEnd() 与 console.groupCollapsed()</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-linux-初始centos" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/24/linux-初始centos/" class="article-date">
-  	<time datetime="2018-03-24T05:48:21.000Z" itemprop="datePublished">2018-03-24</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/24/linux-初始centos/">
-        初始centos
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>虚拟机VMware-workStation 12 安装 centOs 6.4</p>
-<h2 id="网络通讯"><a href="#网络通讯" class="headerlink" title="网络通讯"></a>网络通讯</h2><h3 id="什么是ip"><a href="#什么是ip" class="headerlink" title="什么是ip"></a>什么是ip</h3><p>1、ip以二进制计算十进制展示<br>2、由4组8位(bit)组成，每组用点（.）分割<br>列如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">二进制：11111111.11111111.11111111.11111111 &lt;===&gt; 十进制: 255.255.255.255</span><br></pre></td></tr></table></figure></p>
-<p>3、学名：点分十进制计数（Dotted Decimal Notation）</p>
-<h3 id="什么是网络掩码"><a href="#什么是网络掩码" class="headerlink" title="什么是网络掩码"></a>什么是网络掩码</h3><p>1、如ip一样，网络掩码也是以二进制计算十进制展示，由4组8位(bit)组成，每组用点（.）分割的<br>2、用来确定当前的网络属于什么网段<br>列如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip: 172.16.122.204  网络掩码:255.255.0.0</span><br><span class="line">二进制：10101100.00010000.01111010.11001100   11111111.11111111.00000000.00000000</span><br></pre></td></tr></table></figure></p>
-<p>说明：172.16是网络号，122.204是主机号<br>注：掩码中网络部分和子网部分所在位都是1，主机部分所在位全为0</p>
-<h3 id="特殊ip"><a href="#特殊ip" class="headerlink" title="特殊ip"></a>特殊ip</h3><h3 id="私有ip"><a href="#私有ip" class="headerlink" title="私有ip"></a>私有ip</h3><h3 id="ip划分和子网划分"><a href="#ip划分和子网划分" class="headerlink" title="ip划分和子网划分"></a>ip划分和子网划分</h3><h2 id="网络查询"><a href="#网络查询" class="headerlink" title="网络查询"></a>网络查询</h2><h3 id="了解Linux下查看网络命令"><a href="#了解Linux下查看网络命令" class="headerlink" title="了解Linux下查看网络命令"></a>了解Linux下查看网络命令</h3><p>1、查看ip地址和子网掩码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure></p>
-<p>2、查看网络的所有信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig \all</span><br></pre></td></tr></table></figure></p>
-<p>3、启用和禁用网卡<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifdown + 网卡设备名   禁用</span><br><span class="line">ifup   + 网卡设备名   启用</span><br></pre></td></tr></table></figure></p>
-<p>4、网络状态查询（netstat）<br>-t: 列出TCP协议端口(传输控制协议：需网络等待)<br>-u: 列出UDP协议端口(用户数据协议：不需要等待)<br>-n: 不适用域名和服务名，使用ip地址和端口号<br>-l: 仅列出在监听的网络服务<br>-a: 列出所有网络连接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunl</span><br><span class="line">netstat -an</span><br><span class="line">	netstat -an | grep 状态 显示连接的数据</span><br><span class="line">	</span><br><span class="line">	wc install.log -&gt; netstat -an | grep 状态 | wc l  只显示连接的条数</span><br></pre></td></tr></table></figure></p>
-<p>5、路由查询（route)<br>查看路由表(最后一行是网关)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rout -n &lt;==&gt; netstat -rn</span><br></pre></td></tr></table></figure></p>
-<p>设置/删除网关<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rout add/del default gw xx.xx.xx.1</span><br></pre></td></tr></table></figure></p>
-<p>6、查看DNS<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nslookup + 域名</span><br><span class="line">nslookup + enter</span><br><span class="line">	server + 域名</span><br></pre></td></tr></table></figure></p>
-<h2 id="网络设置"><a href="#网络设置" class="headerlink" title="网络设置"></a>网络设置</h2><p>### </p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-program-reactdemofirst" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/17/program-reactdemofirst/" class="article-date">
-  	<time datetime="2018-03-17T03:05:16.000Z" itemprop="datePublished">2018-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/17/program-reactdemofirst/">
-        reactdemofirst
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第一个react项目</p>
-<h2 id="开发文档"><a href="#开发文档" class="headerlink" title="开发文档"></a>开发文档</h2><p><em>开发框架： <a href="mailto:react@15.5.0" target="_blank" rel="noopener">react@15.5.0</a> <a href="mailto:react-dom@15.5.0" target="_blank" rel="noopener">react-dom@15.5.0</a>
-</em>UI组件： antd(ant design)@2.9.3<br><em>路由： <a href="mailto:ract-router@3.2.1" target="_blank" rel="noopener">ract-router@3.2.1</a>
-</em>图标： antd自带图标/阿里字体图标库<br><em>包管理： yarn
-</em>图片处理: px</p>
-<h2 id="使用antd问题记录"><a href="#使用antd问题记录" class="headerlink" title="使用antd问题记录"></a>使用antd问题记录</h2><h3 id="Layout-gt-Sider收缩问题"><a href="#Layout-gt-Sider收缩问题" class="headerlink" title="Layout-&gt;Sider收缩问题"></a>Layout-&gt;Sider收缩问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Sider	</span><br><span class="line">	collapsed = &#123;Bool&#125;</span><br><span class="line">	//collapsible</span><br><span class="line">	//onCollpase = &#123;fun&#125;&gt;</span><br><span class="line">&lt;/Sider&gt;</span><br></pre></td></tr></table></figure>
-<p>collapsed：规定Sider的展开状态false为展开，true为收起<br>collapsible:导航栏底部的按钮<br>onCollpase: 按钮的点击事件</p>
-<h3 id="Layout-Sider响应式"><a href="#Layout-Sider响应式" class="headerlink" title="Layout-Sider响应式"></a>Layout-Sider响应式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Sider	</span><br><span class="line">	breakpoint = <span class="string">'lg'</span></span><br><span class="line">	collapsedWidth = <span class="string">"0"</span></span><br><span class="line">	onCollpase = &#123;(collapsed,<span class="built_in">type</span>)=&gt;&#123;&#125;&#125;&gt;</span><br><span class="line">&lt;/Sider&gt;</span><br></pre></td></tr></table></figure>
-<p>设置breakpoint属性即生效，当视口宽度小于一定宽度时，Sider会缩小位collapsedWidth的宽度，如果collapsedWidth=‘0’会有特殊的trigger</p>
-<h2 id="react自身问题"><a href="#react自身问题" class="headerlink" title="react自身问题"></a>react自身问题</h2><p>###　组件传值问题<br>1、父组件向子组件传值：<br>    1）父组件内的子标签上定义传值属性，子组件中this.props中使用，此时父组件属性值改变子组件能够立即接受到，否则不可以<br>    2）获取自定义属性event.target.getAttribute(“data-xxx”)<br>    3）this.setState({}，callback())是异步加载<br>2、子组件向父组件传值<br>3、非父子组件传值</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/antd/">antd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/program/">program</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-web-jq基础" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/13/web-jq基础/" class="article-date">
-  	<time datetime="2018-03-13T02:35:33.000Z" itemprop="datePublished">2018-03-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/13/web-jq基础/">
-        jq基础
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="获取标签对应的高度"><a href="#获取标签对应的高度" class="headerlink" title="获取标签对应的高度"></a>获取标签对应的高度</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">获取览器显示区域的高度 ： $(window).height(); </span><br><span class="line">获取浏览器显示区域的宽度 ：$(window).width();</span><br><span class="line">获取页面的文档高度 ：$(document).height();</span><br><span class="line">获取页面的文档宽度 ：$(document).width();</span><br><span class="line">获取滚动条到顶部的垂直高度 ：$(document).scrollTop();</span><br><span class="line">获取滚动条到左边的垂直宽度 ：$(document).scrollLeft();</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 	</div>
 
       
